@@ -1,5 +1,6 @@
 import { BsXCircle } from "react-icons/bs";
 import Modal from "react-modal";
+
 import blogsData from "../../data/blogsData";
 import Image from "next/image";
 import { useState } from "react";

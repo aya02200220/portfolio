@@ -1,17 +1,16 @@
 import {
-  FaCalendarAlt,
   FaEnvelopeOpenText,
   FaMapMarkerAlt,
   FaMobileAlt,
+  FaRegCalendarAlt,
 } from "react-icons/fa";
 
-const Info = () => {
+const PersonalInfo = () => {
   const personalContent = [
     {
       id: 1,
-      border: "border-b border-[#E3E3E3] dark:border-[#3D3A3A]",
       icon: <FaMobileAlt />,
-      iconColor: "text-[#E93B81]",
+      iconColor: "text-oriange",
       name: "Phone",
       meta: (
         <>
@@ -26,17 +25,15 @@ const Info = () => {
     },
     {
       id: 2,
-      border: "border-b border-[#E3E3E3] dark:border-[#3D3A3A]",
       icon: <FaMapMarkerAlt />,
-      iconColor: "text-[#6AB5B9] ",
+      iconColor: "text-oriange-lite",
       name: "Location",
       meta: <>Hong kong china</>,
     },
     {
       id: 3,
-      border: "border-b border-[#E3E3E3] dark:border-[#3D3A3A]",
       icon: <FaEnvelopeOpenText />,
-      iconColor: "text-[#FD7590]",
+      iconColor: "text-green",
       name: "Email",
       meta: (
         <>
@@ -52,8 +49,8 @@ const Info = () => {
     },
     {
       id: 4,
-      icon: <FaCalendarAlt />,
-      iconColor: "text-[#C17CEB]",
+      icon: <FaRegCalendarAlt />,
+      iconColor: "text-color-50",
       name: "Birthday",
       meta: <>May 27, 1990</>,
     },
@@ -62,17 +59,17 @@ const Info = () => {
   return (
     <>
       {personalContent.map((item) => (
-        <div className={`flex py-2.5 ${item.border}`} key={item.id}>
+        <div className="flex" key={item.id}>
           <span
-            className={`flex-shrink-0 socialbtn bg-white dark:bg-black ${item.iconColor} shadow-md`}
+            className={`${item.iconColor} dark:bg-color-990 shadow-icon mr-2.5 flex items-center justify-center rounded-md text-2xl w-12 text-`}
           >
             {item.icon}
           </span>
-          <div className="text-left ml-2.5">
-            <p className="text-xs text-[#44566C] dark:text-[#A6A6A6]">
+          <div className="space-y-1">
+            <p className="text-xs text-gray-lite dark:text-color-910">
               {item.name}
             </p>
-            <p className="dark:text-white break-all">{item.meta}</p>
+            <h6 className="font-medium dark:text-white">{item.meta}</h6>
           </div>
         </div>
       ))}
@@ -80,4 +77,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default PersonalInfo;
