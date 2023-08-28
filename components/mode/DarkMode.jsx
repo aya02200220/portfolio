@@ -13,7 +13,7 @@ export default function DarkMode() {
   return (
     <>
       <span
-        className="bg-white w-[40px] hover:text-white hidden  h-[40px] rounded-full lg:flex justify-center items-center text-black hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer ml-2 "
+        className="bg-white w-[40px] hover:text-white hidden  h-[40px] rounded-full lg:flex justify-center items-center text-black hover:bg-[#9b97c4] transition-all duration-300 ease-in-out cursor-pointer ml-2 "
         onClick={toggle}
       >
         <FiMoon className="text-3xl dark-mode-light dark:hidden" />
