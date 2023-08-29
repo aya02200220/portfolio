@@ -1,8 +1,11 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
@@ -12,8 +15,9 @@ module.exports = {
 
       // default breakpoints but with 40px removed
       screens: {
-        sm: "100%",
-        md: "100%",
+        xs: "400px",
+        sm: "600px",
+        md: "800px",
         lg: "992px",
         xl: "1280px",
       },
@@ -81,4 +85,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+});

@@ -31,14 +31,16 @@ html {
   overflow: hidden;
 }
 
-/************ Banner Css ************/
+/************ Hero Css ************/
 .banner {
-  margin-top: 0;
-  padding: 260px 0 100px 0;
+  /* margin-top: 0; */
+  /* padding: 260px 0 100px 0; */
   /* background-image: url("./assets/img/banner-bg.png"); */
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+  /* height: 100vh; */
+  /* overflow-y: hidden; */
 }
 .banner .tagline {
   font-weight: 700;
@@ -87,8 +89,11 @@ html {
 .banner button:hover svg {
   margin-left: 25px;
 }
-.banner img {
+.banner .img {
   animation: updown 3s linear infinite;
+  /* height: 100%;
+  width: 90%;
+  margin: 0; */
 }
 @keyframes updown {
   0% {
@@ -103,4 +108,9 @@ html {
 }
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+.full-page {
+  height: 100vh;
+  overflow-y: hidden;
 }
