@@ -12,17 +12,17 @@ const Service = () => {
         className="flex-1 pt-5 rounded-md "
         style={{
           background: `${theme === "dark" ? "transparent" : "#FEFAFE"}`,
+          border: `${theme === "dark" ? "solid 1px #6F676C" : "transparent"}`,
         }}
       >
         <p className="text-center text-2xl font-semibold">Frontend</p>
-        <div className="about-box dark:bg-transparent flex flex-wrap justify-center py-4">
+        <div className="dark:bg-transparent flex flex-wrap justify-center py-4">
           {frontend.map((item) => (
             <div
               key={item.id}
               className="flex items-center space-x-2 ml-3  w-[160px] h-[50px]"
             >
               {" "}
-              {/* この行に "flex" と "items-center" を追加しました */}
               <Image
                 className="w-8 h-8 object-contain block"
                 src={item.icon}
@@ -42,10 +42,11 @@ const Service = () => {
         className="flex-1 pt-5 rounded-md "
         style={{
           background: `${theme === "dark" ? "transparent" : "#FEFAFE"}`,
+          border: `${theme === "dark" ? "solid 1px #6F676C" : "transparent"}`,
         }}
       >
         <p className="text-center text-2xl font-semibold">Backend</p>
-        <div className="about-box dark:bg-transparent flex flex-wrap justify-center py-4">
+        <div className="dark:bg-transparent flex flex-wrap justify-center py-4">
           {backend.map((item) => (
             <div
               key={item.id}

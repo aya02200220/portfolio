@@ -16,7 +16,7 @@ const index = () => {
       <Header />
       {/* End  Header */}
 
-      <div className="container lg:rounded-2xl bg-white dark:bg-[#111111]  px-4 sm:px-5 md:px-10 lg:px-20">
+      <div className="container lg:rounded-2xl bg-white dark:bg-[#333]  px-4 sm:px-5 md:px-10 lg:px-20">
         <div data-aos="fade">
           {/* Start top about info */}
           <div className="pt-12">

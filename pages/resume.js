@@ -15,7 +15,7 @@ const index = () => {
       <Header />
       {/* End  Header */}
 
-      <div className="container lg:rounded-2xl bg-white dark:bg-[#111111]  ">
+      <div className="container lg:rounded-2xl bg-white dark:bg-[#333]   ">
         <div data-aos="fade">
           <div className="container sm:px-5 md:px-10 lg:px-20 ">
             <div className="py-12 px-4">
