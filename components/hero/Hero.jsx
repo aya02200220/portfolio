@@ -90,9 +90,11 @@ export const Hero = () => {
                       </span>
                     </h1>
                     <p>
-                      Aya been the industry's standard dummy text ever since the
-                      1500s, when an unknown printer took a galley of type and
-                      scrambled it to make a type specimen book.
+                      I'm not just about codes and algorithms; I'm about
+                      leveraging technology to make the world a better place.
+                      Feel free to reach out if you want to discuss technology,
+                      collaboration, or just a chat over coffee. My inbox is
+                      always open!
                     </p>
                     <Button
                       sx={{ position: "fixed" }}

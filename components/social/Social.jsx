@@ -27,7 +27,7 @@ const Social = () => {
     },
     {
       id: 4,
-      link: "https://www.linkedin.com/",
+      link: "https://www.linkedin.com/in/aya-ishimura-8724a6247/",
       icon: <FaLinkedinIn />,
       iconClass: "text-[#0072b1]",
     },

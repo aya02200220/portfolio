@@ -12,7 +12,8 @@ html {
 }
 @layer components {
   .about-box {
-    @apply dark:border-2 rounded-xl p-6 flex gap-4 border-[#212425];
+    @apply dark:border-2 rounded-xl 
+    /* p-6 flex gap-4 border-[#212425]; */;
   }
   .after-effect {
     @apply text-7xl font-bold font-robotoSlab inline-block relative after:absolute  transform after:-translate-y-[50%] after:bg-gradient-to-r from-[#FA5252] to-[#DD2476] after:h-0.5 after:rounded-md after:content-[""] md:after:w-48  after:top-[50%] dark:text-white;
@@ -65,7 +66,7 @@ html {
   display: block;
 }
 .banner p {
-  color: #b8b8b8;
+  color: #817d7d;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
