@@ -14,10 +14,10 @@ const Header = () => {
 
   return (
     <div className="z-50 ">
-      <div className="container">
+      <div className="px-5">
         {/* Header menu start  */}
         <header className="flex justify-between items-center fixed top-0 left-0 w-full lg:static z-[1111111111]  ">
-          <div className=" flex justify-between w-full px-4 lg:px-0 bg-[#F5F2F5] lg:bg-transparent lg:dark:bg-transparent dark:bg-[#333333] ">
+          <div className=" flex justify-between w-full px-4 md:px-4 lg:px-0 bg-[#F5F2F5] lg:bg-transparent lg:dark:bg-transparent dark:bg-[#333333] ">
             <div className="flex justify-between w-full items-center space-x-4 lg:my-8 my-5 ">
               <Link className="text-5xl font-semibold" href="/">
                 {/* website logo  */}

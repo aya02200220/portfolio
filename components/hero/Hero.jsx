@@ -8,7 +8,7 @@ import headerImg from "../../public/images/about/avatar2.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import { Button } from "@material-tailwind/react";
+import { Button, TypographyProps } from "@material-tailwind/react";
 
 export const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -66,7 +66,6 @@ export const Hero = () => {
     <section className="banner w-screen" id="home">
       <Container style={fullPageStyle}>
         <Row className="flex align-items-center pt-32 lg:pt-9 ">
-          {/* ここでw-3/5を追加して横幅を60%に設定 */}
           <div className="flex-1 w-3/5">
             {" "}
             <div>
@@ -80,7 +79,7 @@ export const Hero = () => {
                     <span className="tagline mt-10">
                       Welcome to my Portfolio
                     </span>
-                    <h1>
+                    <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl">
                       {`Hi! I'm Aya`}{" "}
                       <span
                         className="txt-rotate"

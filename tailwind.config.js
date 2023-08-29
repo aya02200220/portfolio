@@ -18,7 +18,7 @@ module.exports = withMT({
         xs: "400px",
         sm: "600px",
         md: "800px",
-        lg: "992px",
+        lg: "990px",
         xl: "1280px",
       },
     },
@@ -39,7 +39,8 @@ module.exports = withMT({
       "5xl": "1.625rem", // 26px
       "6xl": "1.75rem", // 28px
       "7xl": "2.5rem", // 40px
-      "8xl": "6rem", // 40px
+      "8xl": "3rem", // 40px
+      "9xl": "4rem", // 40px
     },
 
     extend: {
