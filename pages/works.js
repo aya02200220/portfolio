@@ -17,8 +17,8 @@ const index = () => {
         <div data-aos="fade">
           <div className=" mb-8 px-4 sm:px-5 md:px-10 lg:px-[60px]">
             <div className="py-12">
-              <h2 className="after-effect  after:left-48 mt-12  lg:mt-0">
-                Portfolio
+              <h2 className="after-effect after:left-40 mt-12 lg:mt-0 pb-2">
+                Works
               </h2>
               <Works1 />
             </div>

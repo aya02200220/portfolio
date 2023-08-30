@@ -1,5 +1,7 @@
 import Image from "next/image";
-import Social from "../social/Social";
+import Link from "next/link";
+
+// import Social from "../social/Social";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 // import headerImg from "../../public/images/about/avatar.jpg";
@@ -16,8 +18,8 @@ export const Hero = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
-  const period = 2000;
+  const toRotate = ["A Full-Stack Developer.", "Based in Vancouver."];
+  const period = 1000;
 
   const fullPageStyle = {
     height: "75vh",
@@ -56,7 +58,7 @@ export const Hero = () => {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(500);
+      setDelta(100);
     } else {
       setIndex((prevIndex) => prevIndex + 1);
     }
@@ -76,15 +78,16 @@ export const Hero = () => {
                       isVisible ? "animate__animated animate__fadeIn" : ""
                     }
                   >
-                    <span className="tagline mt-10">
+                    <span className="tagline mt-10 text-[#333]">
                       Welcome to my Portfolio
                     </span>
-                    <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl">
-                      {`Hi! I'm Aya`}{" "}
+                    <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl text-[#333]">
+                      {`Hi! I'm Aya`}
+                      <br />
                       <span
                         className="txt-rotate"
                         // dataPeriod="1000"
-                        data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'
+                        data-rotate='[ "A Full-Stack Developer", "Based in Vancouver, BC." ]'
                       >
                         <span className="wrap">{text}</span>
                       </span>
@@ -96,12 +99,15 @@ export const Hero = () => {
                       collaboration, or just a chat over coffee. My inbox is
                       always open!
                     </p>
-                    <Button
-                      sx={{ position: "fixed" }}
-                      onClick={() => console.log("connect")}
-                    >
-                      Let’s Connect <ArrowRightCircle size={25} />
-                    </Button>
+                    <Link href="/contact">
+                      <Button
+                        sx={{ position: "fixed" }}
+                        onClick={() => console.log("connect")}
+                        className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-[35px] mt-6"
+                      >
+                        Let’s Connect <ArrowRightCircle size={25} />
+                      </Button>
+                    </Link>
                   </div>
                 )}
               </TrackVisibility>
@@ -127,55 +133,8 @@ export const Hero = () => {
           </div>
         </Row>
       </Container>
-      {/* <div>
-        Image by{" "}
-        <a href="https://www.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_13223496.htm#query=nice%20background&position=0&from_view=keyword&track=ais">
-          Freepik
-        </a>
-      </div> */}
     </section>
   );
 };
 
 export default Hero;
-
-// const Hero = () => {
-//   return (
-//     <div
-//       className="flex flex-col items-center h-[100vh] md:h-[90vh] lg:h-[80vh]  xl:h-[71vh]  justify-center"
-//       data-aos="fade"
-//     >
-//       <Image
-//         className="rounded-full w-[250px] h-[250px] 2xl:w-[280px] 2xl:h-[280px]"
-//         src="/images/about/avatar.jpg"
-//         width={250}
-//         height={250}
-//         priority
-//         alt="hero image"
-//       />
-//       <h3 className="mt-6 mb-1 text-5xl font-semibold dark:text-white">
-//         Aya Ishimura
-//       </h3>
-//       <p className="mb-4 text-[#7B7B7B]">Full Stack Developer</p>
-//       {/* Avatar Info End */}
-
-//       {/* Social information start */}
-//       <div className="flex space-x-3">
-//         <Social />
-//       </div>
-//       {/* Social information start */}
-
-//       {/* Dowanload button start */}
-//       <a
-//         href="/images/cv.pdf"
-//         download
-//         className="flex items-center bg-gradient-to-r from-[#FA5252] to-[#DD2476] duration-200 transition ease-linear hover:bg-gradient-to-l from-[#DD2476]  to-[#fa5252ef] px-8 py-3 text-lg text-white rounded-[35px] mt-6"
-//       >
-//         <img src="/images/download.png" alt="icon" className="mr-2" />
-//         Download CV
-//       </a>
-
-//       {/* Dowanload button End */}
-//     </div>
-//   );
-// };

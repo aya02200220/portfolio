@@ -13,7 +13,7 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <div className="z-50 ">
+    <div className="z-40 ">
       <div className="px-5">
         {/* Header menu start  */}
         <header className="flex justify-between items-center fixed top-0 left-0 w-full lg:static z-[1111111111]  ">

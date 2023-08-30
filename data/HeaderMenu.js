@@ -17,12 +17,7 @@ module.exports = [
     routePath: "/about",
     icon: <FaRegUser />,
   },
-  {
-    id: "06",
-    name: "Resume",
-    routePath: "/resume",
-    icon: <CgNotes />,
-  },
+
   {
     id: "03",
     name: "Works",
@@ -41,4 +36,10 @@ module.exports = [
     routePath: "/contact",
     icon: <RiContactsBookLine />,
   },
+  // {
+  //   id: "06",
+  //   name: "Resume",
+  //   routePath: "/resume",
+  //   icon: <CgNotes />,
+  // },
 ];
