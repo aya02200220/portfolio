@@ -22,16 +22,19 @@ const Service = () => {
               key={item.id}
               className="flex items-center space-x-2 ml-3  w-[160px] h-[50px]"
             >
-              {" "}
-              <Image
-                className="w-8 h-8 object-contain block"
-                src={item.icon}
-                width={10}
-                height={10}
-                alt="icon"
-              />
-              <div className="space-y-2 ">
-                <h3 className="dark:text-white text-xl ">{item?.title}</h3>
+              <div className="flex justify-center items-center">
+                <Image
+                  className="w-8 h-8 object-contain block"
+                  src={item.icon}
+                  width={10}
+                  height={10}
+                  alt="icon"
+                />
+                <div className="space-y-2 ">
+                  <h3 className="dark:text-white text-xl ml-2">
+                    {item?.title}
+                  </h3>
+                </div>
               </div>
             </div>
           ))}
@@ -62,7 +65,7 @@ const Service = () => {
                 alt="icon"
               />
               <div className="space-y-2 ">
-                <h3 className="dark:text-white text-xl ">{item?.title}</h3>
+                <h3 className="dark:text-white text-xl  ml-2">{item?.title}</h3>
               </div>
             </div>
           ))}

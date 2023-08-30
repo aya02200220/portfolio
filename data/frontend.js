@@ -1,58 +1,58 @@
 module.exports = [
   {
     id: "1",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/react.svg",
     title: "React",
   },
   {
     id: "2",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/nextjs.svg",
     title: "NEXT.js",
   },
   {
     id: "3",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/javascript.svg",
     title: "JavaScript",
   },
   {
     id: "4",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/typescript.svg",
     title: "TypeScript",
   },
   {
     id: "5",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/redux.svg",
     title: "Redux",
   },
   {
     id: "6",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/tailwind.svg",
     title: "TailwindCSS",
   },
   {
     id: "7",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/mui.svg",
     title: "MUI",
   },
   {
     id: "8",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/bootstrap.svg",
     title: "Bootstrap",
   },
 
   {
     id: "9",
-    icon: "/images/icons/icon-1.svg",
+    icon: "/images/icons/html.svg",
     title: "HTML",
   },
   {
     id: "10",
-    icon: "/images/icons/icon-2.svg",
+    icon: "/images/icons/css.svg",
     title: "CSS",
   },
   {
     id: "11",
-    icon: "/images/icons/icon-3.svg",
+    icon: "/images/icons/sass.svg",
     title: "Sass",
   },
 ];
