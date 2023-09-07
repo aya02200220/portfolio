@@ -164,9 +164,9 @@ const Works1 = () => {
                 onClick={() => setIsOpen(false)}
                 className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-8 z-50  text-white transition transform hover:rotate-45 duration-300 ease-in-out "
               />
-              <h2 className="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
+              {/* <h2 className="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                 {singleData.tag} Project
-              </h2>
+              </h2> */}
 
               <div className="grid grid-cols-1 lg:grid-cols-2 my-6">
                 <div className="space-y-2">
@@ -200,7 +200,7 @@ const Works1 = () => {
                   </p>
                   <p className="dark:text-white flex items-center text-[15px] sm:text-lg ">
                     <FiExternalLink className="text-lg mr-2 hidden sm:block" />
-                    Preview :&nbsp;
+                    Website :&nbsp;
                     <span className="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060] ">
                       <a
                         href={singleData?.link}
@@ -214,7 +214,10 @@ const Works1 = () => {
                 </div>
               </div>
 
-              <p className="dark:text-white  text-2line font-normal text-[15px] sm:text-sm  ">
+              <p
+                className="dark:text-white  text-2line font-normal text-[15px] sm:text-sm"
+                style={{ whiteSpace: "pre-line" }}
+              >
                 {singleData?.description}
               </p>
               <a
