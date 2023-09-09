@@ -68,7 +68,7 @@ const Works1 = () => {
   return (
     <>
       {/* Portfilo fillter tab start */}
-      <ul className="mt-[40px] flex w-full justify-start md:justify-end flex-wrap font-medium pb-12">
+      <ul className="mt-[0px] flex w-full justify-start md:justify-end flex-wrap font-medium pb-6">
         <li
           className={`${
             category === "All" ? "text-[#d54b87]" : "filter-btn "
