@@ -152,82 +152,85 @@ const Works1 = () => {
         >
           {/* <div className=" w-full md:w-10/12 flex items-center   lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 transform -translate-x-[50%] -translate-y-[50%] shadow-lg "> */}
           <div className="w-full md:w-10/12 flex items-center lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 md:top-1/2 lg:top-1/2 transform -translate-x-[50%] -translate-y-[50%] md:-translate-y-[50%] lg:-translate-y-[50%] shadow-lg mt-10 lg:mt-0">
-            <div className=" overflow-y-scroll max-h-[70vh] lg:max-h-[80vh] no-scrollbar">
+            {/* <div className=" overflow-y-scroll max-h-[70vh] lg:max-h-[80vh] no-scrollbar"> */}
+            <div className="scrollbarLight overflow-y-scroll max-h-[80vh]">
               {/* close button */}
-              <BsXCircle
-                onClick={() => setIsOpen(false)}
-                className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-8 z-50  text-white transition transform hover:rotate-45 duration-300 ease-in-out "
-              />
-              {/* <h2 className="text-[#ef4060] dark:hover:text-[#d54b87] text-4xl text-center font-bold">
+              <div className="pr-3 pb-2">
+                <BsXCircle
+                  onClick={() => setIsOpen(false)}
+                  className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-8 z-50  text-white transition transform hover:rotate-45 duration-300 ease-in-out "
+                />
+                {/* <h2 className="text-[#ef4060] dark:hover:text-[#d54b87] text-4xl text-center font-bold">
                 {singleData.tag} Project
               </h2> */}
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 my-6">
-                <div className="space-y-2">
-                  <p className="dark:text-white flex items-center text-[15px]  sm:text-lg ">
-                    <FiFilePlus className="sm:text-lg hidden sm:block mr-2  md:text-xl" />
-                    Project :&nbsp;{" "}
-                    <span className="font-medium "> Website</span>
-                  </p>
-                  <p className="dark:text-white flex items-center text-[15px]  sm:text-lg ">
-                    <FiCode className="text-lg mr-2 hidden sm:block " />
-                    {/* Languages :&nbsp; */}
-                    <span className="font-medium ">
-                      {singleData?.languages}
-                    </span>
-                  </p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 my-6">
+                  <div className="space-y-2">
+                    <p className="dark:text-white flex items-center text-[15px]  sm:text-lg ">
+                      <FiFilePlus className="sm:text-lg hidden sm:block mr-2  md:text-xl" />
+                      Project :&nbsp;{" "}
+                      <span className="font-medium "> Website</span>
+                    </p>
+                    <p className="dark:text-white flex items-center text-[15px]  sm:text-lg ">
+                      <FiCode className="text-lg mr-2 hidden sm:block " />
+                      {/* Languages :&nbsp; */}
+                      <span className="font-medium ">
+                        {singleData?.languages}
+                      </span>
+                    </p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px]  sm:text-lg ">
+                      <IoLogoGithub className="text-lg mr-2 hidden sm:block" />
+                      {/* Preview :&nbsp; */}
+                      <span className="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060] ">
+                        <a
+                          href={singleData?.gitlink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {"Github"}
+                        </a>
+                      </span>
+                    </p>
+                    <p className="dark:text-white flex items-center text-[15px] sm:text-lg ">
+                      <FiExternalLink className="text-lg mr-2 hidden sm:block" />
+                      Website :&nbsp;
+                      <span className="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060] ">
+                        <a
+                          href={singleData?.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {singleData?.linkText}
+                        </a>
+                      </span>
+                    </p>
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px]  sm:text-lg ">
-                    <IoLogoGithub className="text-lg mr-2 hidden sm:block" />
-                    {/* Preview :&nbsp; */}
-                    <span className="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060] ">
-                      <a
-                        href={singleData?.gitlink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {"Github"}
-                      </a>
-                    </span>
-                  </p>
-                  <p className="dark:text-white flex items-center text-[15px] sm:text-lg ">
-                    <FiExternalLink className="text-lg mr-2 hidden sm:block" />
-                    Website :&nbsp;
-                    <span className="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060] ">
-                      <a
-                        href={singleData?.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {singleData?.linkText}
-                      </a>
-                    </span>
-                  </p>
-                </div>
+                <p
+                  className="dark:text-white  text-2line font-normal text-[15px] sm:text-sm"
+                  style={{ whiteSpace: "pre-line" }}
+                >
+                  {singleData?.description}
+                </p>
+                <a
+                  href={singleData?.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className="w-full md:h-[450px]  h-auto object-cover rounded-xl mt-6"
+                    src={singleData?.img}
+                    alt="blog details image"
+                    width={620}
+                    height={420}
+                    loading="lazy"
+                  />
+                </a>
               </div>
-
-              <p
-                className="dark:text-white  text-2line font-normal text-[15px] sm:text-sm"
-                style={{ whiteSpace: "pre-line" }}
-              >
-                {singleData?.description}
-              </p>
-              <a
-                href={singleData?.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="w-full md:h-[450px]  h-auto object-cover rounded-xl mt-6"
-                  src={singleData?.img}
-                  alt="blog details image"
-                  width={620}
-                  height={420}
-                  loading="lazy"
-                />
-              </a>
             </div>
           </div>
         </Modal>

@@ -8,6 +8,8 @@ import CommentBox from "./CommentBox";
 import { useTheme } from "next-themes";
 import Comments from "./Comments";
 
+import { BiLinkExternal, BiLogoDevTo } from "react-icons/bi";
+
 const Blog = () => {
   const [singleData, setSingleData] = useState({});
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +56,7 @@ const Blog = () => {
             </div>
             <h3
               onClick={() => setIsOpen(true)}
-              className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#FA5252] dark:hover:text-[#FA5252]"
+              className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#ef4060] dark:hover:text-[#ef4060]"
             >
               {item?.title}
             </h3>
@@ -68,39 +70,55 @@ const Blog = () => {
         onRequestClose={() => setIsOpen(false)}
         className="outline-none flex items-center p-4 md:p-8  rounded-2xl my-8"
       >
-        <div className=" w-full  md:w-10/12 flex items-center   lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 transform -translate-x-[50%] -translate-y-[50%] shadow-lg ">
-          <div className="scrollbarLight overflow-y-scroll max-h-[80vh]">
-            <div className="pr-3 pb-2">
-              <BsXCircle
-                onClick={() => setIsOpen(false)}
-                className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-6  text-white transition transform hover:rotate-45 duration-300 ease-in-out "
-              />
-              <Image
-                className=" w-full md:h-[450px]  object-cover rounded-xl mt-6"
-                src={singleData?.img}
-                alt="blog"
-                width={700}
-                height={400}
-                loading="lazy"
-              />
-              <div className="flex mt-4 text-tiny text-black dark:text-white">
-                <span>{singleData?.date}</span>
-                {/* <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
+        <div className=" w-full md:w-10/12 flex items-center lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 transform -translate-x-[50%] -translate-y-[50%] shadow-lg ">
+          {/* <div className="scrollbarLight overflow-y-scroll max-h-[80vh]"> */}
+          <div className="pr-3 pb-2">
+            <BsXCircle
+              onClick={() => setIsOpen(false)}
+              className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-6  text-white transition transform hover:rotate-45 duration-300 ease-in-out "
+            />
+            <Image
+              className=" w-full md:h-[450px]  object-cover rounded-xl mt-6"
+              src={singleData?.img}
+              alt="blog"
+              width={700}
+              height={400}
+              loading="lazy"
+            />
+            <div className="flex mt-4 text-tiny text-black dark:text-white">
+              <span>{singleData?.date}</span>
+              {/* <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
                   {singleData?.category}
                 </span> */}
-              </div>
-              <h2 className="dark:text-white sm:text-3xl mt-2 font-medium">
-                {singleData?.title}
-              </h2>
-              {blogDescriptionSplit?.map((item, j) => (
-                <p
-                  className="dark:text-white font-normal text-[15px] sm:text-sm my-4"
-                  key={j}
-                >
-                  {item}
-                </p>
-              ))}
             </div>
+            <h2 className="dark:text-white sm:text-3xl mt-2 font-medium">
+              {singleData?.title}
+            </h2>
+            {blogDescriptionSplit?.map((item, j) => (
+              <p
+                className="dark:text-white font-normal text-[15px] sm:text-sm my-4"
+                key={j}
+              >
+                {item}
+              </p>
+            ))}{" "}
+            <p className="flex items-center justify-center">
+              <div className="text-[40px]">
+                {" "}
+                <BiLogoDevTo />
+              </div>
+              <button className=" text-md font-medium dark:text-white duration-300 transition cursor-pointer px-2 py-1 hover:text-[#fff] dark:hover:text-[#fff] bg-[#BF7581] rounded">
+                {" "}
+                <a
+                  href={singleData?.link}
+                  target="_blank"
+                  className="flex items-center"
+                >
+                  READ MORE <BiLinkExternal style={{ marginLeft: "5px" }} />
+                </a>
+              </button>
+            </p>
+            {/* </div> */}
           </div>
         </div>
       </Modal>

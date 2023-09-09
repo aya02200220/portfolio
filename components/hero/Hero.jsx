@@ -78,10 +78,10 @@ export const Hero = () => {
                       isVisible ? "animate__animated animate__fadeIn" : ""
                     }
                   >
-                    <span className="tagline mt-10 text-[#333]">
+                    <span className="tagline mt-10 text-[#2B2B2B]">
                       Welcome to my Portfolio
                     </span>
-                    <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl text-[#333]">
+                    <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl text-[#2B2B2B]">
                       {`Hi! I'm Aya`}
                       <br />
                       <span
