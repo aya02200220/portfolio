@@ -4,19 +4,17 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const CommonContact = ({ condition }) => {
-  const form = useRef();
+  const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-  // use Email js for recive message
+  const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm(
-        "service_n4mkhz9",
-        "template_ugoztxr",
-        form.current,
-        "user_vYmDSd9PwIuRXUQEDjYwN"
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+
       .then(
         (result) => {
           console.log(result);
@@ -53,13 +51,16 @@ const CommonContact = ({ condition }) => {
           : "  dark:border-[#212425] dark:border-2 mb-16  md:p-[48px]  p-4  "
       } bg-color-810 rounded-xl dark:bg-[#333]  mb-[30px] md:mb-[60px]`}
     >
-      <h3 className="text-4xl  ">
+      <h3 className="text-[20px]">
         <span className="text-gray-lite dark:text-[#A6A6A6] ">
-          I&apos;m always open to discussing product
+          I'm eager to explore the realm of web development further! Let's
+          connect if you want to chat about tech, grab a coffee, or simply say
+          hello.
         </span>
         <br />
+        <br />
         <span className="font-semibold dark:text-white">
-          design work or partnerships.
+          You can reach me via social media or drop me an email here.
         </span>
       </h3>
 

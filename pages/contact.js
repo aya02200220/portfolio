@@ -29,9 +29,9 @@ const index = () => {
               {/* End contact address block */}
 
               {/* Start contact form */}
-              <div className="w-full mt-8 lg:mt-0 lg:w-[60%] xl:w-[70%]">
+              {/* <div className="w-full mt-8 lg:mt-0 lg:w-[60%] xl:w-[70%]">
                 <ContactForm />
-              </div>
+              </div> */}
               {/* End contact form */}
             </div>
           </div>
