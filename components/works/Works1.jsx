@@ -36,42 +36,42 @@ const Works1 = () => {
     setIsOpen(true);
   };
 
-  const handleModle = (id) => {
+  const handleModal = (id) => {
     handlePortfolioData(id);
   };
   // End dynamic portfolio with slug
 
   // start filter data based on function
-  // const [test, setTest] = useState("All");
+  const [category, setCategory] = useState("All");
 
-  // const handleSearch = (text) => {
-  //   handleData(text);
-  //   setTest(text);
-  // };
-  // useEffect(() => {
-  //   setTest("All");
-  //   handleData("All");
-  // }, []);
+  const handleSearch = (text) => {
+    handleData(text);
+    setCategory(text);
+  };
+  useEffect(() => {
+    setCategory("All");
+    handleData("All");
+  }, []);
 
   const [data, setData] = useState(portfolioData);
 
-  // // fillter portfilo data
-  // const handleData = (text) => {
-  //   if (text === "All") {
-  //     setData(portfolioData);
-  //   } else {
-  //     const findData = portfolioData.filter((item) => item.tag === text);
-  //     setData(findData);
-  //   }
-  // };
+  // fillter portfilo data
+  const handleData = (text) => {
+    if (text === "All") {
+      setData(portfolioData);
+    } else {
+      const findData = portfolioData.filter((item) => item.tag === text);
+      setData(findData);
+    }
+  };
 
   return (
     <>
       {/* Portfilo fillter tab start */}
-      {/* <ul className="mt-[40px] flex w-full justify-start md:justify-end flex-wrap font-medium pb-12">
+      <ul className="mt-[40px] flex w-full justify-start md:justify-end flex-wrap font-medium pb-12">
         <li
           className={`${
-            test === "All" ? "text-[#FA5252]" : "fillter-btn "
+            category === "All" ? "text-[#d54b87]" : "filter-btn "
           } mr-4 md:mx-4`}
           onClick={() => handleSearch("All")}
         >
@@ -79,35 +79,29 @@ const Works1 = () => {
         </li>
         <li
           className={`${
-            test === "Video" ? "text-[#FA5252]" : "fillter-btn"
+            category === "Web application" ? "text-[#d54b87]" : "filter-btn"
           } mr-4 md:mx-4`}
-          onClick={() => handleSearch("Video")}
+          onClick={() => handleSearch("Web application")}
         >
-          Video
+          Web application
         </li>
         <li
           className={`${
-            test === "Web Design" ? "text-[#FA5252]" : "fillter-btn"
+            category === "Website" ? "text-[#d54b87]" : "filter-btn"
           } mr-4 md:mx-4`}
-          onClick={() => handleSearch("Web Design")}
+          onClick={() => handleSearch("Website")}
         >
-          Web Design
+          Website
         </li>
         <li
           className={`${
-            test === "Logo" ? "text-[#FA5252]" : "fillter-btn ml-0"
+            category === "E-commerce" ? "text-[#d54b87]" : "filter-btn ml-0"
           } mr-4 md:mx-4`}
-          onClick={() => handleSearch("Logo")}
+          onClick={() => handleSearch("E-commerce")}
         >
-          Logo
+          E-commerce
         </li>
-        <li
-          className={`${test === "UI/UX" ? "text-[#FA5252]" : "fillter-btn"}  `}
-          onClick={() => handleSearch("UI/UX")}
-        >
-          Graphic Design
-        </li>
-      </ul> */}
+      </ul>
       {/* End portfolio filter tab */}
 
       {/* Start portfolio items */}
@@ -123,7 +117,7 @@ const Works1 = () => {
               background: `${theme === "dark" ? "transparent" : item?.bg}`,
             }}
             key={item.id}
-            onClick={() => handleModle(item?.id)}
+            onClick={() => handleModal(item?.id)}
           >
             <div className="overflow-hidden rounded-lg">
               <Image
@@ -138,7 +132,7 @@ const Works1 = () => {
             <span className="pt-5 text-[14px] font-normal text-gray-lite block dark:text-[#A6A6A6]">
               {item.tag}
             </span>
-            <h2 className="font-medium cursor-pointer text-xl duration-300 transition hover:text-[#FA5252] dark:hover:text-[#FA5252] dark:text-white mt-2">
+            <h2 className="font-medium cursor-pointer text-xl duration-300 transition hover:text-[#d54b87] dark:hover:text-[#d54b87] dark:text-white mt-2">
               {item.title}
             </h2>
           </div>
@@ -164,7 +158,7 @@ const Works1 = () => {
                 onClick={() => setIsOpen(false)}
                 className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-8 z-50  text-white transition transform hover:rotate-45 duration-300 ease-in-out "
               />
-              {/* <h2 className="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
+              {/* <h2 className="text-[#ef4060] dark:hover:text-[#d54b87] text-4xl text-center font-bold">
                 {singleData.tag} Project
               </h2> */}
 

@@ -1,7 +1,7 @@
 module.exports = [
   {
     id: "1",
-    tag: "Blog site",
+    tag: "Web application",
     title: "NoirRose Diaries",
     img: "/images/work_images/1.png",
     imgSmall: "/images/work_images/small/1.png",
@@ -61,7 +61,7 @@ module.exports = [
   },
   {
     id: "5",
-    tag: "E-commerce Website",
+    tag: "E-commerce",
     title: "MangaMart",
     img: "/images/work_images/5.png",
     imgSmall: "/images/work_images/small/5.png",
@@ -76,7 +76,7 @@ module.exports = [
   },
   {
     id: "6",
-    tag: "Website",
+    tag: "Web application",
     title: "Jackie - Share and Discover Projects",
     img: "/images/work_images/6.png",
     imgSmall: "/images/work_images/small/6.png",

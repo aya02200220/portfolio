@@ -13,14 +13,14 @@ const Blog = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  const handleblogsData = (id) => {
+  const handleBlogsData = (id) => {
     const find = blogsData.find((item) => item?.id === id);
     setSingleData(find);
     setIsOpen(true);
   };
 
-  const handleModle = (id) => {
-    handleblogsData(id);
+  const handleModal = (id) => {
+    handleBlogsData(id);
   };
 
   const blogDescriptionSplit = singleData?.description?.split("\n");
@@ -38,12 +38,12 @@ const Blog = () => {
           >
             <div className="overflow-hidden rounded-lg">
               <Image
-                onClick={() => handleModle(item?.id)}
-                className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110"
+                onClick={() => handleModal(item?.id)}
+                className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 h-[240px] object-cover"
                 src={item?.imgSmall}
                 alt="blog"
                 width={310}
-                height={310}
+                height={260}
               />
             </div>
             <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">
@@ -85,9 +85,9 @@ const Blog = () => {
               />
               <div className="flex mt-4 text-tiny text-black dark:text-white">
                 <span>{singleData?.date}</span>
-                <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
+                {/* <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
                   {singleData?.category}
-                </span>
+                </span> */}
               </div>
               <h2 className="dark:text-white sm:text-3xl mt-2 font-medium">
                 {singleData?.title}
@@ -101,27 +101,6 @@ const Blog = () => {
                 </p>
               ))}
             </div>
-
-            {/* Comment show section */}
-            <Comments />
-            {/* End Comment show Section */}
-
-            {/* Start Social Share */}
-            <div className="flex items-center md:justify-end space-x-4 mt-8 mr-3">
-              <h6 className="dark:text-white text-[20px] ">Login with:</h6>
-              <div className="flex  space-x-3">
-                <Social />
-              </div>
-            </div>
-            {/* End Social Share */}
-
-            {/* Start Comment Box */}
-            <div className="pt-3">
-              <div className=" pr-3 pb-4">
-                <CommentBox />
-              </div>
-            </div>
-            {/* End Comment Box */}
           </div>
         </div>
       </Modal>
