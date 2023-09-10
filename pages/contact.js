@@ -21,18 +21,19 @@ const index = () => {
               Contact
             </h2>
 
-            <div className="lg:flex gap-x-20">
+            <div className="">
+              {/* Start contact form */}
+              {/* <div className="w-full mt-8 lg:mt-0 lg:w-[60%] xl:w-[70%]"> */}
+              <div className="w-full mt-8 lg:mt-0">
+                <ContactForm />
+              </div>
+              {/* End contact form */}
               {/* End contact address block */}
-              <div className="w-full lg:w-[40%] xl:w-[30%] space-y-6">
+              {/* <div className="w-full lg:w-[40%] xl:w-[30%] space-y-6"> */}
+              <div className="w-full space-y-6">
                 <Address />
               </div>
               {/* End contact address block */}
-
-              {/* Start contact form */}
-              {/* <div className="w-full mt-8 lg:mt-0 lg:w-[60%] xl:w-[70%]">
-                <ContactForm />
-              </div> */}
-              {/* End contact form */}
             </div>
           </div>
           {/* Start Common Footer  */}

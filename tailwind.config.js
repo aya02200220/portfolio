@@ -24,7 +24,7 @@ module.exports = withMT({
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
-      robotoSlab: ["Roboto Slab", "serif"],
+      robotoSlab: ["Montserrat", "serif"],
     },
     fontSize: {
       xs: ".75rem", // 12px

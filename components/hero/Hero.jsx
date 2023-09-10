@@ -93,8 +93,6 @@ export const Hero = () => {
                       </span>
                     </h1>
                     <p>
-                      I'm not just about codes and algorithms; I'm about
-                      leveraging technology to make the world a better place.
                       Feel free to reach out if you want to discuss technology,
                       collaboration, or just a chat over coffee. My inbox is
                       always open!

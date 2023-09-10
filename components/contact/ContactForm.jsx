@@ -49,23 +49,30 @@ const CommonContact = ({ condition }) => {
         condition
           ? "mx-4 md:mx-[60px] p-4 md:p-16 dark:border-[#212425] dark:border-2"
           : "  dark:border-[#212425] dark:border-2 mb-16  md:p-[48px]  p-4  "
-      } bg-color-810 rounded-xl dark:bg-[#333]  mb-[30px] md:mb-[60px]`}
+      } bg-[#F1EBEC] rounded-xl dark:bg-[#333]  mb-[30px] md:mb-[60px]`}
     >
       <h3 className="text-[20px]">
+        <span className="font-medium dark:text-white text-center text-[28px] leading-3">
+          You can reach me via social media or drop me an email here.
+        </span>
+
+        <br />
+        <br />
         <span className="text-gray-lite dark:text-[#A6A6A6] ">
           I'm eager to explore the realm of web development further! Let's
           connect if you want to chat about tech, grab a coffee, or simply say
           hello.
         </span>
-        <br />
-        <br />
-        <span className="font-semibold dark:text-white">
-          You can reach me via social media or drop me an email here.
-        </span>
       </h3>
 
+      <div className="text-center mt-3">
+        <button className=" text-6xl font-medium dark:text-white duration-300 transition cursor-pointer px-6 py-2 hover:text-[#fff] dark:hover:text-[#fff] bg-[#BF7581] rounded-lg">
+          Say Hello
+        </button>
+      </div>
+
       {/* Form Start */}
-      <form id="myForm" ref={form} onSubmit={sendEmail}>
+      {/* <form id="myForm" ref={form} onSubmit={sendEmail}>
         <div className="relative z-0 w-full mt-[40px] mb-8 group">
           <input
             type="text"
@@ -81,7 +88,6 @@ const CommonContact = ({ condition }) => {
             Name *
           </label>
         </div>
-        {/* End single block */}
 
         <div className="relative z-0 w-full mb-8 group">
           <input
@@ -99,7 +105,6 @@ const CommonContact = ({ condition }) => {
             Email *
           </label>
         </div>
-        {/* End single block */}
 
         <div className="relative z-0 w-full mb-8 group">
           <input
@@ -117,7 +122,6 @@ const CommonContact = ({ condition }) => {
             Message *
           </label>
         </div>
-        {/* End single block */}
 
         <div className="transition-all duration-300  ease-in-out inline-block hover:bg-gradient-to-r from-[#FA5252] to-[#DD2476] rounded-lg  mt-3">
           <input
@@ -126,8 +130,7 @@ const CommonContact = ({ condition }) => {
             value="Submit"
           />
         </div>
-        {/* End single block */}
-      </form>
+      </form> */}
     </div>
   );
 };
