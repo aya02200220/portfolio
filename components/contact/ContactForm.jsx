@@ -51,8 +51,8 @@ const CommonContact = ({ condition }) => {
           : "  dark:border-[#212425] dark:border-2 mb-16  md:p-[48px]  p-4  "
       } bg-[#F1EBEC] rounded-xl dark:bg-[#333]  mb-[30px] md:mb-[60px]`}
     >
-      <h3 className="text-[20px]">
-        <span className="font-medium dark:text-white text-center text-[28px] leading-3">
+      <h3 className="text-center">
+        <span className="font-medium dark:text-white text-[25px] leading-7">
           You can reach me via social media or drop me an email here.
         </span>
 
@@ -65,9 +65,9 @@ const CommonContact = ({ condition }) => {
         </span>
       </h3>
 
-      <div className="text-center mt-3">
-        <button className=" text-6xl font-medium dark:text-white duration-300 transition cursor-pointer px-6 py-2 hover:text-[#fff] dark:hover:text-[#fff] bg-[#BF7581] rounded-lg">
-          Say Hello
+      <div className="text-center mt-7">
+        <button className=" text-6xl font-medium text-white dark:text-white duration-300 transition cursor-pointer px-6 py-2 bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-lg">
+          👋 Say Hello
         </button>
       </div>
 
