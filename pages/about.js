@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import Header from "../components/header/Header";
 import About1 from "../components/about/about1";
 import Skills from "../components/skills/Skills";
-import Brand from "../components/brand/Brand";
 import Footer from "../components/footer/Footer";
 import Seo from "../components/seo/Seo";
 import PersonalInfo from "../components/about/about1/PersonalInfo";
@@ -17,7 +16,7 @@ const index = () => {
       {/* End  Header */}
 
       <div className="container lg:rounded-2xl bg-white dark:bg-[#333]  px-4 sm:px-5 md:px-10 lg:px-20">
-        <div data-aos="fade">
+        <div data-aos="fade-up" data-aos-duration="900">
           {/* Start top about info */}
           <div className="pt-12">
             <h2 className="after-effect after:left-52 mt-12 lg:mt-0 ">

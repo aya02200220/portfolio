@@ -32,34 +32,40 @@ const Blog = () => {
       {blogsData.map((item) => {
         return (
           <div
-            key={item.id}
-            style={{
-              background: `${theme === "dark" ? "transparent" : item?.bg}`,
-            }}
-            className="p-5 rounded-lg mb-2 h-full dark:border-[#212425] dark:border-2"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            className="rounded-lg"
           >
-            <div className="overflow-hidden rounded-lg">
-              <Image
-                onClick={() => handleModal(item?.id)}
-                className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 h-[240px] object-cover"
-                src={item?.imgSmall}
-                alt="blog"
-                width={310}
-                height={260}
-              />
-            </div>
-            <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">
-              <span>{item?.date}</span>
-              <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
-                {item?.category}
-              </span>
-            </div>
-            <h3
-              onClick={() => setIsOpen(true)}
-              className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#ef4060] dark:hover:text-[#ef4060]"
+            <div
+              key={item.id}
+              style={{
+                background: `${theme === "dark" ? "transparent" : item?.bg}`,
+              }}
+              className="p-5 rounded-lg mb-2 h-full dark:border-[#212425] dark:border-2"
             >
-              {item?.title}
-            </h3>
+              <div className="overflow-hidden rounded-lg">
+                <Image
+                  onClick={() => handleModal(item?.id)}
+                  className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 h-[240px] object-cover"
+                  src={item?.imgSmall}
+                  alt="blog"
+                  width={310}
+                  height={260}
+                />
+              </div>
+              <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">
+                <span>{item?.date}</span>
+                <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
+                  {item?.category}
+                </span>
+              </div>
+              <h3
+                onClick={() => setIsOpen(true)}
+                className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#ef4060] dark:hover:text-[#ef4060]"
+              >
+                {item?.title}
+              </h3>
+            </div>
           </div>
         );
       })}

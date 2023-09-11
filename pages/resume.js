@@ -16,7 +16,7 @@ const index = () => {
       {/* End  Header */}
 
       <div className="container lg:rounded-2xl bg-white dark:bg-[#333]   ">
-        <div data-aos="fade">
+        <div data-aos="fade-up" data-aos-duration="900">
           <div className="container sm:px-5 md:px-10 lg:px-20 ">
             <div className="py-12 px-4">
               {/*page title here */}

@@ -112,29 +112,35 @@ const Works1 = () => {
       >
         {data.map((item) => (
           <div
-            className="rounded-lg p-6 dark:border-[2px] border-[#212425]"
-            style={{
-              background: `${theme === "dark" ? "transparent" : item?.bg}`,
-            }}
-            key={item.id}
-            onClick={() => handleModal(item?.id)}
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            className="rounded-lg"
           >
-            <div className="overflow-hidden rounded-lg">
-              <Image
-                className="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-[266px] object-cover" // h-[300px] object-cover を追加
-                src={item.imgSmall}
-                width={310}
-                height={266}
-                priority
-                alt="portfolio Image"
-              />
+            <div
+              className="rounded-lg p-6 dark:border-[2px] border-[#212425]"
+              style={{
+                background: `${theme === "dark" ? "transparent" : item?.bg}`,
+              }}
+              key={item.id}
+              onClick={() => handleModal(item?.id)}
+            >
+              <div className="overflow-hidden rounded-lg">
+                <Image
+                  className="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-[266px] object-cover" // h-[300px] object-cover を追加
+                  src={item.imgSmall}
+                  width={310}
+                  height={266}
+                  priority
+                  alt="portfolio Image"
+                />
+              </div>
+              <span className="pt-5 text-[14px] font-normal text-gray-lite block dark:text-[#A6A6A6]">
+                {item.tag}
+              </span>
+              <h2 className="font-medium cursor-pointer text-xl duration-300 transition hover:text-[#d54b87] dark:hover:text-[#d54b87] dark:text-white mt-2">
+                {item.title}
+              </h2>
             </div>
-            <span className="pt-5 text-[14px] font-normal text-gray-lite block dark:text-[#A6A6A6]">
-              {item.tag}
-            </span>
-            <h2 className="font-medium cursor-pointer text-xl duration-300 transition hover:text-[#d54b87] dark:hover:text-[#d54b87] dark:text-white mt-2">
-              {item.title}
-            </h2>
           </div>
         ))}
       </Masonry>

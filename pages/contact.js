@@ -16,7 +16,7 @@ const index = () => {
       {/* End  Header */}
 
       <div className="container lg:rounded-2xl bg-white dark:bg-[#333]  ">
-        <div data-aos="fade">
+        <div data-aos="fade-up" data-aos-duration="900">
           <div className="py-12 px-4 sm:px-5 md:px-10 lg:px-20">
             <h2 className="after-effect after:left-120 mb-[40px] mt-12  lg:mt-0">
               Contact
@@ -45,7 +45,6 @@ const index = () => {
         </div>
         {/* End fade effect */}
       </div>
-      {/* End container */}
     </div>
   );
 };

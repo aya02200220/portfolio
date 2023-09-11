@@ -7,7 +7,7 @@ module.exports = [
       <>
         <p>
           <a
-            href="pyon220@gmail.com"
+            href="mailto:pyon220@gmail.com"
             className="text-gray-lite text-lg dark:text-[#A6A6A6] "
           >
             pyon220@gmail.com
@@ -15,7 +15,7 @@ module.exports = [
         </p>
       </>
     ),
-    bg: "#D4C5C8",
+    bg: "#F1EBEC",
   },
   {
     id: "03",
@@ -24,7 +24,7 @@ module.exports = [
     info: (
       <>
         <p className="text-gray-lite text-lg dark:text-[#A6A6A6] ">
-          Vancouver, B.C
+          Vancouver, B.C, Canada
         </p>
       </>
     ),

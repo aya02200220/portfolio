@@ -3,6 +3,8 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { HiOutlineMail } from "react-icons/hi";
+
 const CommonContact = ({ condition }) => {
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -48,12 +50,13 @@ const CommonContact = ({ condition }) => {
       className={`${
         condition
           ? "mx-4 md:mx-[60px] p-4 md:p-16 dark:border-[#212425] dark:border-2"
-          : "  dark:border-[#212425] dark:border-2 mb-16  md:p-[48px]  p-4  "
-      } bg-[#F1EBEC] rounded-xl dark:bg-[#333]  mb-[30px] md:mb-[60px]`}
+          : "  dark:border-[#212425] dark:border-2 mb-16 md:p-[48px] p-4  "
+      } bg-[#F1EBEC] rounded-xl dark:bg-[#333]  mb-[30px] md:mb-[0px] lg:h-[430px] xl:h-[430px]`}
     >
       <h3 className="text-center">
-        <span className="font-medium dark:text-white text-[25px] leading-7">
-          You can reach me via social media or drop me an email here.
+        <span className="font-medium dark:text-white text-[25px] leading-7 ">
+          You can reach me via social media or drop me an email{" "}
+          <HiOutlineMail className="inline-block" /> here!
         </span>
 
         <br />
@@ -65,8 +68,15 @@ const CommonContact = ({ condition }) => {
         </span>
       </h3>
 
-      <div className="text-center mt-7">
-        <button className=" text-6xl font-medium text-white dark:text-white duration-300 transition cursor-pointer px-6 py-2 bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-lg">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        className="text-center mt-9"
+      >
+        <button
+          className=" text-6xl font-medium text-white dark:text-white duration-300 transition cursor-pointer px-6 py-2 bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-lg"
+          onClick={() => (window.location.href = "mailto:pyon220@gmail.com")}
+        >
           👋 Say Hello
         </button>
       </div>
