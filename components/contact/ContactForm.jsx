@@ -50,8 +50,8 @@ const CommonContact = ({ condition }) => {
       className={`${
         condition
           ? "mx-4 md:mx-[60px] p-4 md:p-16 dark:border-[#212425] dark:border-2"
-          : "  dark:border-[#212425] dark:border-2 mb-16 md:p-[48px] p-4  "
-      } bg-[#F1EBEC] rounded-xl dark:bg-[#333]  mb-[30px] md:mb-[0px] lg:h-[430px] xl:h-[430px]`}
+          : "  dark:border-[#212425] dark:border-2 md:p-[48px] p-4  "
+      } bg-[#F1EBEC] rounded-xl dark:bg-[#333] lg:h-[430px] xl:h-[430px]`}
     >
       <h3 className="text-center">
         <span className="font-medium dark:text-white text-[25px] leading-7 ">
