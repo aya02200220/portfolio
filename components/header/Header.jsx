@@ -1,6 +1,6 @@
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HeaderMenu from "../../data/HeaderMenu";
 import Image from "next/image";
 import DarkMode from "../mode/DarkMode";
@@ -11,12 +11,34 @@ import { useRouter } from "next/router";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="z-40 ">
       <div className="px-5">
         {/* Header menu start  */}
-        <header className="flex justify-between items-center fixed top-0 left-0 w-full lg:static z-[1111111111]  ">
+        {/* <header className="flex justify-between items-center fixed top-0 left-0 w-full lg:static z-[1111111111]  "> */}
+        <header
+          className={`flex justify-between items-center fixed top-0 left-0 right-0 z-[1111111111] ${
+            scrolled ? "bg-opacity-80 bg-white" : ""
+          }`}
+        >
           <div className=" flex justify-between w-full px-4 md:px-4 lg:px-0 bg-[#F5F2F5] lg:bg-transparent lg:dark:bg-transparent dark:bg-[#333333] ">
             <div className="flex justify-between w-full items-center space-x-4 lg:my-8 my-5 ">
               <Link className="text-5xl font-semibold" href="/">

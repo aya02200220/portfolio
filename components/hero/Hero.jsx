@@ -22,7 +22,7 @@ export const Hero = () => {
   const period = 1000;
 
   const fullPageStyle = {
-    height: "75vh",
+    height: "100vh",
     overflowY: "hidden",
     paddingBottom: "100px",
   };
@@ -65,9 +65,9 @@ export const Hero = () => {
   };
 
   return (
-    <section className="banner w-screen" id="home">
-      <Container style={fullPageStyle}>
-        <Row className="flex align-items-center pt-32 lg:pt-9 ">
+    <section className="banner " id="home">
+      <Container style={fullPageStyle} className="pt-[150px]">
+        <Row className="flex align-items-center pt-32 lg:pt-9 h-full">
           <div className="flex-1 w-3/5">
             {" "}
             <div>
@@ -97,11 +97,11 @@ export const Hero = () => {
                       collaboration, or just a chat over coffee. My inbox is
                       always open!
                     </p>
-                    <Link href="/contact">
+                    <Link href="#contact">
                       <Button
                         sx={{ position: "fixed" }}
                         onClick={() => console.log("connect")}
-                        className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-[35px] mt-6"
+                        className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-[35px] mt-1"
                       >
                         Let’s Connect <ArrowRightCircle size={25} />
                       </Button>
