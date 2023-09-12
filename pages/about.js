@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Header from "../components/header/Header";
-import About1 from "../components/about/about1";
+import About from "../components/about/about1";
 import Skills from "../components/skills/Skills";
 import Footer from "../components/footer/Footer";
 import Seo from "../components/seo/Seo";
@@ -18,7 +18,7 @@ const index = () => {
             <h2 className="after-effect after:left-52 mt-12 lg:mt-0 ">
               About Me
             </h2>
-            <About1 />
+            <About />
           </div>
 
           <div className="pb-12 ">
