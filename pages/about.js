@@ -31,11 +31,9 @@ const index = () => {
 
           <div className="pb-12 ">
             <h3 className="text-[25px] dark:text-white font-medium pb-5 mt-5 text-center">
-              My Skills
+              Skill Sets
             </h3>
             <div className="">
-              {/* Experience information  */}
-
               <Skills />
             </div>
           </div>

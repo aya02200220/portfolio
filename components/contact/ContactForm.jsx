@@ -1,4 +1,6 @@
 import React, { useRef } from "react";
+import { useTheme } from "next-themes";
+
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,6 +11,8 @@ const CommonContact = ({ condition }) => {
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+  const { theme, setTheme } = useTheme();
 
   const form = useRef();
 
@@ -47,6 +51,7 @@ const CommonContact = ({ condition }) => {
 
   return (
     <div
+      style={{ background: `${theme === "dark" ? "#212425" : "#F1EBEC"}` }}
       className={`${
         condition
           ? "mx-4 md:mx-[60px] p-4 md:p-16 dark:border-[#212425] dark:border-2"

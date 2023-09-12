@@ -11,11 +11,12 @@ const Service = () => {
       <div
         className="flex-1 pt-5 rounded-md "
         style={{
-          background: `${theme === "dark" ? "transparent" : "#FEFAFE"}`,
+          background: `${theme === "dark" ? "#808080" : "#F1EBEC"}`,
           border: `${theme === "dark" ? "solid 1px #6F676C" : "transparent"}`,
         }}
       >
-        <p className="text-center text-2xl font-semibold">Frontend</p>
+        <p className="text-center text-2xl font-medium ">Frontend</p>
+        <p className="after-line mt-0 lg:mt-0"></p>
         <div className="dark:bg-transparent flex flex-wrap justify-center py-4">
           {frontend.map((item) => (
             <div
@@ -44,11 +45,13 @@ const Service = () => {
       <div
         className="flex-1 pt-5 rounded-md "
         style={{
-          background: `${theme === "dark" ? "transparent" : "#FEFAFE"}`,
+          background: `${theme === "dark" ? "#808080" : "#F1EBEC"}`,
           border: `${theme === "dark" ? "solid 1px #6F676C" : "transparent"}`,
         }}
       >
-        <p className="text-center text-2xl font-semibold">Backend</p>
+        <p className="text-center text-2xl font-medium">Backend</p>
+        <p className="after-line mt-0 lg:mt-0"></p>
+
         <div className="dark:bg-transparent flex flex-wrap justify-center py-4">
           {backend.map((item) => (
             <div

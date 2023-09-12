@@ -18,6 +18,14 @@ html {
   .after-effect {
     @apply text-7xl font-bold font-robotoSlab inline-block relative after:absolute  transform after:-translate-y-[50%] after:bg-gradient-to-r from-[#FA5252] to-[#DD2476] after:h-0.5 after:rounded-md after:content-[""] md:after:w-48  after:top-[50%] dark:text-white;
   }
+  .after-line {
+    @apply relative block text-center;
+  }
+
+  .after-line::after {
+    @apply absolute block w-48 h-0.5 bg-gradient-to-r from-[#FA5252] to-[#DD2476] content-[""] bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/3 top-[80%];
+  }
+
   .resume-btn {
     @apply bg-[#EDF2F2] cursor-default px-5 py-2 rounded-lg  text-gray-lite dark:bg-[#1C1C1C] dark:text-[#A6A6A6];
   }

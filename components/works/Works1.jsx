@@ -55,7 +55,7 @@ const Works1 = () => {
 
   const [data, setData] = useState(portfolioData);
 
-  // fillter portfilo data
+  // filter
   const handleData = (text) => {
     if (text === "All") {
       setData(portfolioData);
@@ -67,7 +67,7 @@ const Works1 = () => {
 
   return (
     <>
-      {/* Portfilo fillter tab start */}
+      {/* Portfolio filter tab start */}
       <ul className="mt-[0px] flex w-full justify-start md:justify-end flex-wrap font-medium pb-6">
         <li
           className={`${
@@ -126,10 +126,10 @@ const Works1 = () => {
             >
               <div className="overflow-hidden rounded-lg">
                 <Image
-                  className="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-[266px] object-cover" // h-[300px] object-cover を追加
+                  className="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-[200px] object-cover"
                   src={item.imgSmall}
                   width={310}
-                  height={266}
+                  height={200}
                   priority
                   alt="portfolio Image"
                 />

@@ -23,11 +23,11 @@ module.exports = withMT({
         sm: "100%",
         md: "100%",
         lg: "992px",
-        xl: "1280px",
+        xl: "1100px",
       },
     },
     fontFamily: {
-      poppins: ["Poppins", "sans-serif"],
+      poppins: ["Montserrat", "sans-serif"],
       robotoSlab: ["Montserrat", "serif"],
     },
     fontSize: {

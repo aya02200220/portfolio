@@ -39,18 +39,18 @@ const Blog = () => {
             <div
               key={item.id}
               style={{
-                background: `${theme === "dark" ? "transparent" : item?.bg}`,
+                background: `${theme === "dark" ? "#212425" : item?.bg}`,
               }}
               className="p-5 rounded-lg mb-2 h-full dark:border-[#212425] dark:border-2"
             >
               <div className="overflow-hidden rounded-lg">
                 <Image
                   onClick={() => handleModal(item?.id)}
-                  className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 h-[240px] object-cover"
+                  className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 h-[200px] object-cover"
                   src={item?.imgSmall}
                   alt="blog"
                   width={310}
-                  height={260}
+                  height={200}
                 />
               </div>
               <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">

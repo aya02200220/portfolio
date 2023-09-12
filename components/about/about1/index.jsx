@@ -29,7 +29,7 @@ const index = () => {
             Who am i?
           </h3>
           <p className="text-gray-lite  dark:text-color-910 leading-7 text-[17px]">
-            👋 Hello there! I&apos;m Aya, I'm a full stack developer based in
+            👋 Hello there! I&apos;m Aya, a full stack developer based in
             Vancouver, BC. <br />A passionate and agile Full Stack Web Developer
             with a love for crafting elegant solutions to complex problems.
             Coding isn&apos;t just a job for me; it&apos;s a medium through
@@ -42,19 +42,7 @@ const index = () => {
             opportunities to grow and help others grow.
           </p>
         </div>
-
-        {/* personal information */}
-        {/* <div>
-          <h3 className="text-4xl font-medium my-5 dark:text-white">
-            Personal Info
-          </h3>
-          <div className=" grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <PersonalInfo />
-          </div>
-        </div> */}
-        {/* End personal information */}
       </div>
-      {/* End about right content */}
     </div>
   );
 };
