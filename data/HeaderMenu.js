@@ -14,32 +14,26 @@ module.exports = [
   {
     id: "02",
     name: "About",
-    routePath: "/about",
+    routePath: "#about",
     icon: <FaRegUser />,
   },
 
   {
     id: "03",
     name: "Works",
-    routePath: "/works",
+    routePath: "#works",
     icon: <FiCodesandbox />,
   },
   {
     id: "04",
     name: "Blogs",
-    routePath: "/blogs",
+    routePath: "#blogs",
     icon: <FaBlogger />,
   },
   {
     id: "05",
     name: "Contact",
-    routePath: "/contact",
+    routePath: "#contact",
     icon: <RiContactsBookLine />,
   },
-  // {
-  //   id: "06",
-  //   name: "Resume",
-  //   routePath: "/resume",
-  //   icon: <CgNotes />,
-  // },
 ];
