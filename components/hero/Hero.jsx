@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// import Social from "../social/Social";
+import Social from "../social/Social";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import lightHeaderImg from "../../public/images/about/avatar.svg";
@@ -72,8 +72,8 @@ export const Hero = () => {
         style={fullPageStyle}
         className=" pt-[170px] lg:pt-[150px] pl-10 "
       >
-        <Row className="flex align-items-center lg:pt-9 h-full">
-          <div className="flex-1 w-3/5 relative">
+        <Row className="flex align-items-center lg:pt-9 lg:h-full ">
+          <div className="flex-1 w-3/5 relative ">
             {" "}
             <div>
               <TrackVisibility>
@@ -91,7 +91,7 @@ export const Hero = () => {
                       Welcome to my Portfolio
                     </span>
                     <h1
-                      className={`text-4xl sm:text-7xl md:text-8xl lg:text-9xl ${
+                      className={`text-4xl sm:text-7xl md:text-8xl lg:text-9xl md:h-[140px] lg:h-[195px] ${
                         theme === "dark" ? "text-[#fbf7fb]" : "text-[#2B2B2B]"
                       }`}
                     >
@@ -114,14 +114,22 @@ export const Hero = () => {
                       collaboration, or just a chat over coffee. My inbox is
                       always open!
                     </p>
-                    <Link href="#contact">
-                      <Button
-                        onClick={() => console.log("connect")}
-                        className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-[35px] mt-1 "
-                      >
-                        Let’s Connect <ArrowRightCircle size={25} />
-                      </Button>
-                    </Link>
+
+                    {/* Connect */}
+                    <div className="flex items-center mt-4 gap-8">
+                      <Link href="#contact">
+                        <Button
+                          onClick={() => console.log("connect")}
+                          className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-500 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-[35px] "
+                        >
+                          Let’s Connect <ArrowRightCircle size={25} />
+                        </Button>
+                      </Link>
+                      <div className="flex space-x-3">
+                        <Social />
+                      </div>
+                      {/* End Connect */}
+                    </div>
                   </div>
                 )}
               </TrackVisibility>
