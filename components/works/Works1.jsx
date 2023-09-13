@@ -150,13 +150,12 @@ const Works1 = () => {
 
       {/* モーダルの内容 */}
 
-      <div className="fixed z-50">
+      <div className="fixed z-100">
         <Modal
           isOpen={isOpen}
           onRequestClose={() => setIsOpen(false)}
-          className=" outline-none flex items-center  p-4 md:p-8  rounded-2xl my-8"
+          className=" outline-none flex items-center  p-4 md:p-8  rounded-2xl my-8 "
         >
-          {/* <div className=" w-full md:w-10/12 flex items-center   lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 transform -translate-x-[50%] -translate-y-[50%] shadow-lg "> */}
           <div className="w-full md:w-10/12 flex items-center lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 md:top-1/2 lg:top-1/2 transform -translate-x-[50%] -translate-y-[50%] md:-translate-y-[50%] lg:-translate-y-[50%] shadow-lg mt-10 lg:mt-0">
             {/* <div className=" overflow-y-scroll max-h-[70vh] lg:max-h-[80vh] no-scrollbar"> */}
             <div className="scrollbarLight overflow-y-scroll max-h-[80vh]">
@@ -164,7 +163,7 @@ const Works1 = () => {
               <div className="pr-3 pb-2">
                 <BsXCircle
                   onClick={() => setIsOpen(false)}
-                  className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-8 z-50  text-white transition transform hover:rotate-45 duration-300 ease-in-out "
+                  className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-8 z-50  text-white transition transform hover:rotate-45 duration-300 ease-in-out z-100"
                 />
                 {/* <h2 className="text-[#ef4060] dark:hover:text-[#d54b87] text-4xl text-center font-bold">
                 {singleData.tag} Project

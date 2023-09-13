@@ -9,13 +9,15 @@ const index = () => {
         {/* personal images for routePath page  */}
         <Image
           className="w-full md:w-[300px] md:h-[350px] object-cover overflow-hidden rounded-[35px] mb-3 md:mb-0"
-          src="/images/about/about.png"
+          // src="/images/about/about.png"
+          // src="/images/about/aboutme2.png"
+          src="/images/about/aboutme.png"
           width={300}
           height={300}
           alt="routePath"
         />
         <div>
-          <div className="mb-5">
+          <div className="mb-5 mt-2">
             <PersonalInfo />
           </div>
         </div>
