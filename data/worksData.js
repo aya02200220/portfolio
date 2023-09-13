@@ -2,7 +2,7 @@ module.exports = [
   {
     id: "1",
     tag: "Web application",
-    title: "NoirRose Diaries",
+    title: "Blog Site",
     img: "/images/work_images/1.png",
     imgSmall: "/images/work_images/small/1.png",
     bg: "#F1EBEC",
@@ -77,7 +77,7 @@ module.exports = [
   {
     id: "6",
     tag: "Web application",
-    title: "Jackie - Share and Discover Projects",
+    title: "Project Platform",
     img: "/images/work_images/6.png",
     imgSmall: "/images/work_images/small/6.png",
     bg: "#D5C5C8",

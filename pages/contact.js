@@ -10,10 +10,6 @@ const index = () => {
   return (
     <div className="bg-homeBg min-h-screen  dark:bg-homeBg-dark bg-no-repeat bg-center bg-cover bg-fixed  md:pb-16 w-full">
       <Seo pageTitle="Contact" />
-      {/* End Head for Seo */}
-
-      <Header />
-      {/* End  Header */}
 
       <div className="container lg:rounded-2xl bg-white dark:bg-[#333] ">
         <div data-aos="fade-up" data-aos-duration="900">
@@ -23,11 +19,9 @@ const index = () => {
             </h2>
 
             <div className="flex flex-col md:flex-row justify-center gap-4 space-y-6 md:space-y-0">
-              {/* Start contact form */}
               <div className="order-1 md:order-2 w-full md:w-3/5 mt-8 lg:mt-0">
                 <ContactForm />
               </div>
-              {/* End contact form */}
 
               <div className="order-2 md:order-1 w-full md:w-2/5 space-y-6">
                 <SnsInfo />

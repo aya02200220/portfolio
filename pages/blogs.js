@@ -8,10 +8,6 @@ const index = () => {
   return (
     <div className="bg-homeBg min-h-screen dark:bg-homeBg-dark bg-no-repeat bg-center bg-cover bg-fixed  md:pb-16 w-full">
       <Seo pageTitle="Blog" />
-      {/* End Head for Seo */}
-
-      <Header />
-      {/* End  Header */}
 
       <div className="container lg:rounded-2xl bg-white dark:bg-[#333]   ">
         <div data-aos="fade-up" data-aos-duration="900">
@@ -20,20 +16,11 @@ const index = () => {
               <h2 className="after-effect after:left-32 mt-12 lg:mt-0">
                 Blogs
               </h2>
-              {/* End Blog page title */}
-
               <Blog />
-              {/* End Blog Blog items */}
             </div>
           </div>
-          {/* End pax-4 */}
-
-          <Footer />
-          {/* End footer */}
         </div>
-        {/* End fade effect */}
       </div>
-      {/* End container */}
     </div>
   );
 };

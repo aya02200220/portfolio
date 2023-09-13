@@ -8,7 +8,10 @@ const Service = () => {
 
   return (
     <div className="flex gap-4 items-stretch">
+      {/* <div data-aos="flip-left" data-aos-duration="1000"></div> */}
       <div
+        data-aos="flip-left"
+        data-aos-duration="1000"
         className="flex-1 pt-5 rounded-md "
         style={{
           background: `${theme === "dark" ? "#808080" : "#F1EBEC"}`,
@@ -43,6 +46,8 @@ const Service = () => {
       </div>
 
       <div
+        data-aos="flip-left"
+        data-aos-duration="1000"
         className="flex-1 pt-5 rounded-md "
         style={{
           background: `${theme === "dark" ? "#808080" : "#F1EBEC"}`,

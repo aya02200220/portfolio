@@ -4,13 +4,14 @@ import Link from "next/link";
 // import Social from "../social/Social";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import headerImg from "../../public/images/about/avatar.jpg";
-import headerImg from "../../public/images/about/avatar2.svg";
-// import headerImg from "../../public/images/about/header-img.svg";
+import lightHeaderImg from "../../public/images/about/avatar.svg";
+import darkHeaderImg from "../../public/images/about/dark-avatar.svg";
+
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { Button, TypographyProps } from "@material-tailwind/react";
+import { useTheme } from "next-themes";
 
 export const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -20,11 +21,12 @@ export const Hero = () => {
   const [index, setIndex] = useState(1);
   const toRotate = ["A Full-Stack Developer.", "Based in Vancouver."];
   const period = 1000;
+  const { theme, setTheme } = useTheme();
 
   const fullPageStyle = {
-    height: "75vh",
+    height: "100vh",
     overflowY: "hidden",
-    paddingBottom: "100px",
+    paddingBottom: "50px",
   };
 
   useEffect(() => {
@@ -65,10 +67,13 @@ export const Hero = () => {
   };
 
   return (
-    <section className="banner w-screen" id="home">
-      <Container style={fullPageStyle}>
-        <Row className="flex align-items-center pt-32 lg:pt-9 ">
-          <div className="flex-1 w-3/5">
+    <section className="banner " id="home">
+      <Container
+        style={fullPageStyle}
+        className=" pt-[170px] lg:pt-[150px] pl-10 "
+      >
+        <Row className="flex align-items-center lg:pt-9 h-full">
+          <div className="flex-1 w-3/5 relative">
             {" "}
             <div>
               <TrackVisibility>
@@ -78,10 +83,18 @@ export const Hero = () => {
                       isVisible ? "animate__animated animate__fadeIn" : ""
                     }
                   >
-                    <span className="tagline mt-10 text-[#2B2B2B]">
+                    <span
+                      className={`tagline ${
+                        theme === "dark" ? "text-[#FEFAFE]" : "text-[#2B2B2B]"
+                      }`}
+                    >
                       Welcome to my Portfolio
                     </span>
-                    <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl text-[#2B2B2B]">
+                    <h1
+                      className={`text-4xl sm:text-7xl md:text-8xl lg:text-9xl ${
+                        theme === "dark" ? "text-[#fbf7fb]" : "text-[#2B2B2B]"
+                      }`}
+                    >
                       {`Hi! I'm Aya`}
                       <br />
                       <span
@@ -92,16 +105,19 @@ export const Hero = () => {
                         <span className="wrap">{text}</span>
                       </span>
                     </h1>
-                    <p>
+                    <p
+                      className={
+                        theme === "dark" ? "text-[#777777]" : "text-[#676262]"
+                      }
+                    >
                       Feel free to reach out if you want to discuss technology,
                       collaboration, or just a chat over coffee. My inbox is
                       always open!
                     </p>
-                    <Link href="/contact">
+                    <Link href="#contact">
                       <Button
-                        sx={{ position: "fixed" }}
                         onClick={() => console.log("connect")}
-                        className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-[35px] mt-6"
+                        className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-[35px] mt-1 "
                       >
                         Let’s Connect <ArrowRightCircle size={25} />
                       </Button>
@@ -122,7 +138,7 @@ export const Hero = () => {
                 >
                   <Image
                     className="img mr-0"
-                    src={headerImg}
+                    src={theme === "dark" ? darkHeaderImg : lightHeaderImg}
                     alt="Header Img"
                   />
                 </div>

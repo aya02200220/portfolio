@@ -1,24 +1,50 @@
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HeaderMenu from "../../data/HeaderMenu";
 import Image from "next/image";
 import DarkMode from "../mode/DarkMode";
 import DarkModeMobile from "../mode/DarkModeMobile";
 import { isActiveLink } from "../../utilis/linkActiveChecker";
 import { useRouter } from "next/router";
+import { useTheme } from "next-themes";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="z-40 ">
+    <div>
       <div className="px-5">
-        {/* Header menu start  */}
-        <header className="flex justify-between items-center fixed top-0 left-0 w-full lg:static z-[1111111111]  ">
-          <div className=" flex justify-between w-full px-4 md:px-4 lg:px-0 bg-[#F5F2F5] lg:bg-transparent lg:dark:bg-transparent dark:bg-[#333333] ">
-            <div className="flex justify-between w-full items-center space-x-4 lg:my-8 my-5 ">
+        <header
+          className={`flex justify-between items-center fixed top-0 left-0 right-0 z-10 transition-all duration-500 ${
+            scrolled
+              ? theme === "dark"
+                ? "bg-opacity-80 bg-[#333]"
+                : "bg-opacity-80 bg-white"
+              : ""
+          } `}
+        >
+          <div className=" flex justify-between w-full px-4 md:px-4 lg:px-10 bg-[#BF7581] lg:bg-transparent lg:dark:bg-transparent dark:bg-[#333333] ">
+            <div className="flex justify-between w-full items-center space-x-4 lg:my-5 ">
               <Link className="text-5xl font-semibold" href="/">
                 {/* website logo  */}
                 <h1>Hello!</h1>
@@ -45,7 +71,7 @@ const Header = () => {
                 ) : (
                   <span
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="lg:opacity-0 cursor-pointer lg:invisible visible opacity-100  bg-[#BA6F7B] w-[40px] h-[40px] rounded-full flex justify-center items-center text-white text-3xl ml-3 "
+                    className="lg:opacity-0 cursor-pointer lg:invisible visible opacity-100  bg-[#BA6F7B] w-[40px] h-[40px] rounded-full flex justify-center items-center text-white text-3xl ml-3  "
                   >
                     <AiOutlineClose />
                   </span>
@@ -58,16 +84,16 @@ const Header = () => {
 
           {/* mobile nav menu start */}
           <nav
-            className={`${
+            className={`mr-10 ${
               menuOpen ? "block  dark:bg-[#333333]   " : "hidden lg:block"
-            }`}
+            } `}
           >
             {/* Menu items start  */}
             <ul
               className={`${
                 menuOpen
-                  ? "block lg:hidden  absolute left-0 rounded-b-[20px] top-20 z-[22222222222222] w-full bg-white dark:bg-[#212425] drop-shadow-lg py-4 "
-                  : "flex my-12 "
+                  ? "block lg:hidden  absolute left-0 rounded-b-[20px] top-20 z-10 w-full bg-white dark:bg-[#212425] drop-shadow-lg py-4 "
+                  : "flex my-0 "
               }`}
             >
               {HeaderMenu.map((item) => (
