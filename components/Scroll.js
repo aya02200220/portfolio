@@ -2,7 +2,7 @@ export const smoothScroll = (targetID) => {
   const target = document.getElementById(targetID);
   if (!target) return;
 
-  const headerOffset = 90;
+  const headerOffset = 100;
   const targetPosition =
     target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
   const startPosition = window.pageYOffset;

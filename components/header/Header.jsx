@@ -53,15 +53,15 @@ const Header = () => {
             <div className="flex justify-between w-full items-center space-x-4 my-2 lg:my-5 ">
               <Link className="text-5xl font-semibold" href="/">
                 {/* website logo  */}
-                <h1>Hello!</h1>
-                {/* <Image
-                  className="h-[28px] lg:h-[32px]"
-                  width={153}
-                  height={26}
+                {/* <h1>Hello!</h1> */}
+                <Image
+                  className="h-[28px] lg:h-[35px]"
+                  width={100}
+                  height={35}
                   priority
                   src="/images/logo/logo.png"
                   alt="logo"
-                /> */}
+                />
               </Link>
 
               {/* start mobile menu toggle and mode btn */}
