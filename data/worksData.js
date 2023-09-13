@@ -98,10 +98,10 @@ module.exports = [
     bg: "#F1EBEC",
     client: "",
     languages: "Next.js,Tailwind CSS,",
-    link: "https://e-commerce-website-theta-beige.vercel.app/",
-    gitlink: "https://github.com/aya02200220/e-commerce-website",
+    link: "https://portfolio-aya02200220.vercel.app/",
+    gitlink: "https://github.com/aya02200220/portfolio",
     linkText: "Portfolio",
     description:
-      "This project is an E-commerce web application where you can purchase various manga titles. The application fetches data from an API and displays it in a user-friendly interface. You can browse through a collection of manga, add your favorite titles to a shopping cart, and proceed to checkout. The application also includes a favorite feature, where you can mark specific manga titles as your favorite.",
+      "My Portfolio is an immersive digital showcase encapsulating the journey, skills, and creativity of Aya Ishimura. Designed with precision and an eye for aesthetics, this portfolio stands as a testament to Aya's dedication to her craft, her continuous learning curve, and her prowess in web development and design.",
   },
 ];

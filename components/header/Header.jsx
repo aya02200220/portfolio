@@ -59,7 +59,12 @@ const Header = () => {
                   width={100}
                   height={35}
                   priority
-                  src="/images/logo/logo.png"
+                  // src="/images/logo/logo.png"
+                  src={
+                    theme === "dark"
+                      ? "/images/logo/dark-logo.png"
+                      : "/images/logo/logo.png"
+                  }
                   alt="logo"
                 />
               </Link>
