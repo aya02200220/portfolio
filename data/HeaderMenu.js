@@ -8,7 +8,7 @@ module.exports = [
   {
     id: "01",
     name: "Home",
-    routePath: "/",
+    routePath: "#home",
     icon: <AiOutlineHome />,
   },
   {

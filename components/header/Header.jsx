@@ -8,12 +8,18 @@ import DarkModeMobile from "../mode/DarkModeMobile";
 import { isActiveLink } from "../../utilis/linkActiveChecker";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
+import { smoothScroll } from "../Scroll";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  const handleLinkClick = (e, targetID) => {
+    e.preventDefault();
+    smoothScroll(targetID.substring(1)); // "#"を取り除くためにsubstringを使用します
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -105,6 +111,7 @@ const Header = () => {
                         : "px-2 rounded-md  cursor-pointer font-poppins bg-[rgba(255,255,255,0.7)] text-gray-lite font-medium mx-2.5 flex text-xtiny py-2.5 md:px-4 xl:px-5 items-center transition-all duration-300 ease-in-out dark:hover:text-white dark:bg-[#212425] hover:text-white hover:bg-gradient-to-r from-[#E7A3AB] to-[#BF7581] dark:text-[#A6A6A6]"
                     } `}
                     href={item.routePath}
+                    onClick={(e) => handleLinkClick(e, item.routePath)}
                   >
                     <span className="mr-2 text-xl">{item.icon}</span>
                     {item.name}
