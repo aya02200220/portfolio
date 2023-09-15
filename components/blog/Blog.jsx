@@ -74,14 +74,14 @@ const Blog = () => {
       <Modal
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
-        className="outline-none flex items-center p-4 md:p-8  rounded-2xl my-8"
+        className="outline-none flex items-center p-4 md:p-8  rounded-2xl my-8 "
       >
-        <div className=" w-full md:w-10/12 flex items-center lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 transform -translate-x-[50%] -translate-y-[50%] shadow-lg ">
-          {/* <div className="scrollbarLight overflow-y-scroll max-h-[80vh]"> */}
-          <div className="pr-3 pb-2">
+        <div className=" w-full md:w-10/12 flex items-center lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 transform -translate-x-[50%]  -translate-y-[45%] md:-translate-y-[50%] shadow-lg xs:mt-30 sm:mt-10 lg:mt-5">
+          <div className="scrollbarLight overflow-y-scroll max-h-[80vh]">
+            {/* <div className="pr-3 pb-2"> */}
             <BsXCircle
               onClick={() => setIsOpen(false)}
-              className="text-7xl cursor-pointer  absolute right-2 -top-12 md:-right-10 md:-top-6  text-white transition transform hover:rotate-45 duration-300 ease-in-out "
+              className="text-7xl cursor-pointer  absolute right-2 top-1 md:top-22 md:-right-12 md:-top-0  text-[#333] md:text-white transition transform hover:rotate-45 duration-300 ease-in-out "
             />
             <Image
               className=" w-full md:h-[450px]  object-cover rounded-xl mt-6"
