@@ -22,27 +22,6 @@ const index = () => {
           alt="routePath"
         />
 
-        {/* <div className="relative w-full md:w-[300px] md:h-[350px]">
-          <Image
-            className={`absolute top-0 left-0 w-full md:w-[300px] md:h-[350px] object-cover overflow-hidden rounded-[35px] mb-3 md:mb-0 fade ${
-              theme === "dark" ? "opacity-0" : "opacity-100"
-            }`}
-            src="/images/about/about2.png"
-            width={300}
-            height={300}
-            alt="Light mode image"
-          />
-          <Image
-            className={`absolute top-0 left-0 w-full md:w-[300px] md:h-[350px] object-cover overflow-hidden rounded-[35px] mb-3 md:mb-0 fade ${
-              theme === "dark" ? "opacity-100" : "opacity-0"
-            }`}
-            src="/images/about/about.png"
-            width={300}
-            height={300}
-            alt="Dark mode image"
-          />
-        </div> */}
-
         <div>
           <div className="mb-5 mt-2">
             <PersonalInfo />

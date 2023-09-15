@@ -12,9 +12,12 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { Button, TypographyProps } from "@material-tailwind/react";
 import { useTheme } from "next-themes";
+import { smoothScroll } from "../Scroll";
 
 export const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
@@ -22,6 +25,27 @@ export const Hero = () => {
   const toRotate = ["A Full-Stack Developer.", "Based in Vancouver."];
   const period = 1000;
   const { theme, setTheme } = useTheme();
+
+  const handleLinkClick = (e, targetID) => {
+    e.preventDefault();
+    smoothScroll(targetID.substring(1)); // "#"を取り除くためにsubstringを使用
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const fullPageStyle = {
     height: "100vh",
@@ -119,7 +143,7 @@ export const Hero = () => {
                     <div className="flex flex-col md:flex-row items-center mt-4 gap-8">
                       <Link href="#contact">
                         <Button
-                          onClick={() => console.log("connect")}
+                          onClick={(e) => handleLinkClick(e, "#contact")}
                           className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-500 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-white rounded-[35px] text-tiny md:text-lg lg:text-xl"
                         >
                           Let’s Connect <ArrowRightCircle size={25} />

@@ -1,6 +1,6 @@
 # Aya Ishimura's Portfolio
 
-Welcome to the repository for Aya Ishimura's professional portfolio. This project showcases my skills, projects, and experiences as a developer.
+Welcome to the repository for Aya's professional portfolio. This project showcases my skills, projects, and experiences as a developer.
 
 ## Features
 
