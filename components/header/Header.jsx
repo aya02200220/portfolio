@@ -39,24 +39,24 @@ const Header = () => {
 
   return (
     <div>
-      <div className="px-5">
+      <div className="px-5 fixed z-10">
         <header
-          className={`flex justify-between items-center fixed top-0 left-0 right-0 z-10 transition-all duration-500 ${
+          className={`flex justify-between items-center fixed top-0 left-0 right-0 transition-all duration-500 ${
             scrolled
               ? theme === "dark"
                 ? "bg-opacity-70 bg-[#333]"
-                : "bg-opacity-70 bg-white"
+                : "bg-opacity-70 bg-[#fff]"
               : ""
           } `}
         >
-          <div className=" flex justify-between w-full px-4 md:px-4 lg:px-10 bg-[#BF7581] lg:bg-transparent lg:dark:bg-transparent dark:bg-[#333333] ">
-            <div className="flex justify-between w-full items-center space-x-4 my-2 lg:my-5 ">
-              <Link className="text-5xl font-semibold" href="/">
+          <div className=" flex justify-between w-full px-4 md:px-4 lg:px-5 bg-[#BF7581] lg:bg-transparent lg:dark:bg-transparent dark:bg-[#333333] ">
+            <div className="flex justify-between w-full items-center space-x-4 my-2 lg:my-3 ">
+              <Link className="text-5xl font-semibold " href="/">
                 {/* website logo  */}
                 {/* <h1>Hello!</h1> */}
                 <Image
                   className="h-[28px] lg:h-[35px]"
-                  width={100}
+                  width={95}
                   height={35}
                   priority
                   // src="/images/logo/logo.png"
@@ -103,7 +103,7 @@ const Header = () => {
             <ul
               className={`${
                 menuOpen
-                  ? "block lg:hidden  absolute left-0 rounded-b-[20px] top-20 z-10 w-full bg-white dark:bg-[#212425] drop-shadow-lg py-4 "
+                  ? "block lg:hidden  absolute left-0 rounded-b-[20px] top-20 w-full bg-white dark:bg-[#212425] drop-shadow-lg py-4 "
                   : "flex my-0 "
               }`}
             >

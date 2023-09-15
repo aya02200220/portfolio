@@ -24,7 +24,7 @@
   }
 
   .after-line::after {
-    @apply absolute block w-48 h-0.5 bg-gradient-to-r from-[#FA5252] to-[#DD2476] content-[""] bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/3 top-[80%];
+    @apply absolute block w-40 h-0.5 bg-gradient-to-r from-[#FA5252] to-[#DD2476] content-[""] bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/3 top-[80%];
   }
 
   .resume-btn {
@@ -43,6 +43,9 @@
 
 .fade {
   transition: opacity 0.7s;
+}
+
+.modal {
 }
 
 /************ Hero Css ************/

@@ -24,7 +24,7 @@ const Service = () => {
           {frontend.map((item) => (
             <div
               key={item.id}
-              className="flex items-center space-x-2 ml-3  w-[160px] h-[50px]"
+              className="flex items-center space-x-2 ml-3 w-[152px] md:w-[160px] h-[50px]"
             >
               <div className="flex justify-center items-center">
                 <Image
@@ -35,7 +35,7 @@ const Service = () => {
                   alt="icon"
                 />
                 <div className="space-y-2 ">
-                  <h3 className="dark:text-white text-xl ml-2">
+                  <h3 className="dark:text-white text-lg md:text-xl ml:1 md:ml-2">
                     {item?.title}
                   </h3>
                 </div>
@@ -61,7 +61,7 @@ const Service = () => {
           {backend.map((item) => (
             <div
               key={item.id}
-              className="flex items-center space-x-2 ml-3  w-[160px] h-[50px]"
+              className="flex items-center space-x-2 ml-3 w-[152px] md:w-[160px] h-[50px]"
             >
               {" "}
               {/* この行に "flex" と "items-center" を追加しました */}
@@ -73,7 +73,9 @@ const Service = () => {
                 alt="icon"
               />
               <div className="space-y-2 ">
-                <h3 className="dark:text-white text-xl  ml-2">{item?.title}</h3>
+                <h3 className="dark:text-white text-lg md:text-xl ml:1 md:ml-2">
+                  {item?.title}
+                </h3>
               </div>
             </div>
           ))}

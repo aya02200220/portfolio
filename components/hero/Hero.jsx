@@ -67,7 +67,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="banner " id="home">
+    <section className="banner z-0" id="home">
       <Container
         style={fullPageStyle}
         className=" pt-[100px] lg:pt-[150px] pl-10 "
