@@ -18,7 +18,7 @@ const Header = () => {
 
   const handleLinkClick = (e, targetID) => {
     e.preventDefault();
-    smoothScroll(targetID.substring(1)); // "#"を取り除くためにsubstringを使用します
+    smoothScroll(targetID.substring(1)); // "#"を取り除くためにsubstringを使用
   };
 
   useEffect(() => {
@@ -95,15 +95,15 @@ const Header = () => {
 
           {/* mobile nav menu start */}
           <nav
-            className={`mr-10 ${
-              menuOpen ? "block  dark:bg-[#333333]   " : "hidden lg:block"
+            className={`mdr-0 lg:mr-10 ${
+              menuOpen ? "block  dark:bg-[#333333]" : "hidden lg:block"
             } `}
           >
             {/* Menu items start  */}
             <ul
               className={`${
                 menuOpen
-                  ? "block lg:hidden  absolute left-0 rounded-b-[20px] top-20 w-full bg-white dark:bg-[#212425] drop-shadow-lg py-4 "
+                  ? "block lg:hidden  absolute left-0 rounded-b-[20px] top-14 w-full bg-white dark:bg-[#212425] drop-shadow-lg py-4 "
                   : "flex my-0 "
               }`}
             >
