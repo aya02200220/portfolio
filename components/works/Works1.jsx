@@ -140,6 +140,16 @@ const Works1 = () => {
               <h2 className="font-medium cursor-pointer text-xl duration-300 transition hover:text-[#d54b87] dark:hover:text-[#d54b87] dark:text-white mt-2">
                 {item.title}
               </h2>
+
+              <div className="flex gap-3 mt-3">
+                {item.icon.map((iconItem, index) => {
+                  return (
+                    <div className="text-3xl" key={index}>
+                      {iconItem}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         ))}

@@ -10,7 +10,7 @@ const index = () => {
       {/* start .col and routePath image left */}
       <div className="col-span-12 md:col-span-4 flex justify-center flex-col items-center">
         {/* personal images for routePath page  */}
-        {/* <Image
+        <Image
           className="w-full md:w-[300px] md:h-[350px] object-cover overflow-hidden rounded-[35px] mb-3 md:mb-0"
           src={
             theme === "dark"
@@ -20,9 +20,9 @@ const index = () => {
           width={300}
           height={300}
           alt="routePath"
-        /> */}
+        />
 
-        <div className="relative w-full md:w-[300px] md:h-[350px]">
+        {/* <div className="relative w-full md:w-[300px] md:h-[350px]">
           <Image
             className={`absolute top-0 left-0 w-full md:w-[300px] md:h-[350px] object-cover overflow-hidden rounded-[35px] mb-3 md:mb-0 fade ${
               theme === "dark" ? "opacity-0" : "opacity-100"
@@ -41,7 +41,7 @@ const index = () => {
             height={300}
             alt="Dark mode image"
           />
-        </div>
+        </div> */}
 
         <div>
           <div className="mb-5 mt-2">

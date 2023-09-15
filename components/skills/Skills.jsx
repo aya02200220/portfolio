@@ -27,13 +27,7 @@ const Service = () => {
               className="flex items-center space-x-2 ml-3 w-[152px] md:w-[160px] h-[50px]"
             >
               <div className="flex justify-center items-center">
-                <Image
-                  className="w-8 h-8 object-contain block"
-                  src={item.icon}
-                  width={10}
-                  height={10}
-                  alt="icon"
-                />
+                {item?.icon}
                 <div className="space-y-2 ">
                   <h3 className="dark:text-white text-lg md:text-xl ml:1 md:ml-2">
                     {item?.title}
@@ -63,15 +57,7 @@ const Service = () => {
               key={item.id}
               className="flex items-center space-x-2 ml-3 w-[152px] md:w-[160px] h-[50px]"
             >
-              {" "}
-              {/* この行に "flex" と "items-center" を追加しました */}
-              <Image
-                className="w-8 h-8 object-contain block"
-                src={item.icon}
-                width={10}
-                height={10}
-                alt="icon"
-              />
+              {item?.icon}
               <div className="space-y-2 ">
                 <h3 className="dark:text-white text-lg md:text-xl ml:1 md:ml-2">
                   {item?.title}

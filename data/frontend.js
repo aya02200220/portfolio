@@ -1,110 +1,74 @@
+import { FaFigma, FaSass, FaHtml5, FaBootstrap, FaReact } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa6";
+import { TbBrandNextjs } from "react-icons/tb";
+import {
+  SiMui,
+  SiTailwindcss,
+  SiRedux,
+  SiTypescript,
+  SiJavascript,
+} from "react-icons/si";
+
 module.exports = [
   {
     id: "1",
-    icon: "/images/icons/react.svg",
+    icon: <FaReact size={29} />,
     title: "React",
   },
   {
     id: "2",
-    icon: "/images/icons/nextjs.svg",
+    icon: <TbBrandNextjs size={29} />,
     title: "NEXT.js",
   },
   {
     id: "3",
-    icon: "/images/icons/javascript.svg",
+    icon: <SiJavascript size={29} />,
     title: "JavaScript",
   },
   {
     id: "4",
-    icon: "/images/icons/typescript.svg",
+    icon: <SiTypescript size={29} />,
     title: "TypeScript",
   },
   {
     id: "5",
-    icon: "/images/icons/redux.svg",
+    icon: <SiRedux size={29} />,
     title: "Redux",
   },
   {
     id: "6",
-    icon: "/images/icons/tailwind.svg",
+    icon: <SiTailwindcss size={29} />,
     title: "TailwindCSS",
   },
   {
     id: "7",
-    icon: "/images/icons/mui.svg",
+    icon: <SiMui size={29} />,
     title: "MUI",
   },
   {
     id: "8",
-    icon: "/images/icons/bootstrap.svg",
+    icon: <FaBootstrap size={29} />,
     title: "Bootstrap",
   },
 
   {
     id: "9",
-    icon: "/images/icons/html.svg",
+    icon: <FaHtml5 size={29} />,
     title: "HTML",
   },
   {
     id: "10",
-    icon: "/images/icons/css.svg",
+    icon: <FaCss3Alt size={29} />,
     title: "CSS",
   },
   {
     id: "11",
-    icon: "/images/icons/sass.svg",
+    icon: <FaSass size={29} />,
     title: "Sass",
   },
+  {
+    id: "12",
+    icon: <FaFigma size={26} />,
+    title: "Figma",
+  },
 ];
-
-// module.exports = [
-
-//   {
-//     id: "1",
-//     icon: "/images/icons/icon-1.svg",
-//     title: "Ui/Ux Design",
-//     des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-//     color: "#D566FF",
-//     bg: "#FCF4FF",
-//   },
-//   {
-//     id: "2",
-//     icon: "/images/icons/icon-2.svg",
-//     title: "App Development",
-//     des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-//     color: "#DDA10C",
-//     bg: "#FEFAF0",
-//   },
-//   {
-//     id: "3",
-//     icon: "/images/icons/icon-3.svg",
-//     title: "Photography",
-//     des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-//     color: "#8774FF",
-//     bg: "#FCF4FF",
-//   },
-//   {
-//     id: "4",
-//     icon: "/images/icons/icon-4.svg",
-//     title: "Photography",
-//     des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-//     color: "#FF6080",
-//     bg: "#FFF4F4",
-//   },
-//   {
-//     id: "5",
-//     icon: "/images/icons/icon-5.svg",
-//     title: "Managment",
-//     des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-//     color: "#FF75D8",
-//     bg: "#FFF0F8",
-//   },
-//   {
-//     id: "6",
-//     icon: "/images/icons/icon-6.svg",
-//     title: "Web Development",
-//     des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-//     color: "#269FFF",
-//     bg: "#F3FAFF",
-//   },
-// ];
