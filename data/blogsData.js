@@ -1,5 +1,17 @@
 module.exports = [
   {
+    id: "5",
+    img: "/images/blog_images/5.jpg",
+    imgSmall: "/images/blog_images/small/5.jpg",
+    date: "Sep 16, 2023",
+    title:
+      "Overcoming Deployment Challenges with a MERN Stack application on Vercel",
+    bg: "#F1EBEC",
+    description:
+      "Deploying a MERN stack application, especially the server-side code, on platforms like Vercel can be a daunting task. Navigating through the myriad of configurations and dealing with unexpected issues can be overwhelming. In this article, I'll share the challenges I faced while deploying my MERN blog site's server-side code on Vercel and how I overcame them. ",
+    link: "https://dev.to/aya02200220/overcoming-deployment-challenges-with-a-mern-stack-blog-on-vercel-3p12",
+  },
+  {
     id: "1",
     img: "/images/blog_images/1.jpg",
     imgSmall: "/images/blog_images/small/1.jpg",

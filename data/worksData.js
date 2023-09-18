@@ -33,7 +33,7 @@ module.exports = [
     gitlink: "https://github.com/aya02200220/blog-app",
     linkText: "NoirRose Diaries",
     description:
-      "NoirRose is a modern blogging platform built with MERN Stack (MongoDB, Express, React, and Node.js). The application allows both guests and registered users to read blog posts. For additional features like posting blogs or adding to favorites, signing up is required.\n\nKey Features:\n- Read blogs as a guest or registered user\n- User authentication\n- Create, edit, delete blog posts (for registered users)\n- Add posts to your reading list (for registered users)",
+      "NoirRose is a modern blogging platform built with MERN Stack (MongoDB, Express, React, and Node.js). The application allows both guests and registered users to read blog posts. For additional features like posting blogs or adding to favorites, signing up is required.\n\nKey Features:\n- Read blogs as a guest or registered user\n- User authentication\n- Create, edit, delete blog posts (for registered users)\n- Add posts to your reading list (for registered users)\n- Cloud-based image storage with Cloudinary",
     icon: [
       <SiMongodb />,
       <SiExpress />,
