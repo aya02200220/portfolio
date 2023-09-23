@@ -42,6 +42,7 @@ module.exports = [
       <SiMui />,
       <FaCss3Alt />,
     ],
+    description2: [],
   },
   {
     id: "2",
