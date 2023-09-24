@@ -43,26 +43,29 @@ module.exports = [
       <FaCss3Alt />,
     ],
     description2: [
-      [
-        "Explore Posts on Home",
-        "View posts from all registered users in the 'Home' menu.",
-      ],
-      [
-        "Create a Reading List",
-        "Found an interesting article? Add it to your Reading List.",
-      ],
-      [
-        "Follow Your Favorite Authors",
-        "If you find an author you like, you can view all of their posts.",
-      ],
-      [
-        "Manage Your Account",
-        "View your post history and update your email, password, bio, and avatar at any time from 'My Account'.",
-      ],
-      [
-        "Forgot Your Password?",
-        "Easily reset it by clicking on 'Forgot Password?'. A link to reset your password will be sent to your registered email. This link is valid for one hour.",
-      ],
+      {
+        title: "Explore Posts on Home",
+        content: "View posts from all registered users in the 'Home' menu.",
+      },
+      {
+        title: "Create a Reading List",
+        content: "Found an interesting article? Add it to your Reading List.",
+      },
+      {
+        title: "Follow Your Favorite Authors",
+        content:
+          "If you find an author you like, you can view all of their posts.",
+      },
+      {
+        title: "Manage Your Account",
+        content:
+          "View your post history and update your email, password, bio, and avatar at any time from 'My Account'.",
+      },
+      {
+        title: "Forgot Your Password?",
+        content:
+          "Easily reset it by clicking on 'Forgot Password?'. A link to reset your password will be sent to your registered email. This link is valid for one hour.",
+      },
     ],
   },
   {
