@@ -2,6 +2,8 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import addressData from "../../data/addressData";
 
+import { FaMapMarkerAlt } from "react-icons/fa";
+
 const Address = () => {
   const { theme, setTheme } = useTheme();
 

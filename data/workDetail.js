@@ -50,13 +50,13 @@ module.exports = [
           "The 'Home' menu allows you to browse through posts from all registered users, presenting a diverse range of articles. Discover new content and gain insights from different perspectives, all in one place.",
       },
       {
-        img: "/images/work_images/1/2.png",
+        img: "/images/work_images/1/2-2.png",
         title: "Create a Reading List",
         content:
           "Stumble upon an interesting article? Don’t worry about losing it. With our 'Reading List' feature, you can effortlessly save posts you want to read later. Organize your reads and keep them just a click away.",
       },
       {
-        img: "/images/work_images/1/6.png",
+        img: "/images/work_images/1/6-2.png",
         title: "Interact with Comments",
         content:
           "Logged-in users can leave comments on any articles they like. Not only can users post comments, but they can also edit or delete their own comments after posting, providing a flexible way to express and refine their thoughts and opinions.",

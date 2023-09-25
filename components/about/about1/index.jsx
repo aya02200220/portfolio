@@ -22,11 +22,14 @@ const index = () => {
           alt="routePath"
         />
 
-        <div>
-          <div className="mb-5 mt-2">
-            <PersonalInfo />
-          </div>
-        </div>
+        <a
+          href="/images/AyaIshimura-CV.pdf"
+          target="_blank"
+          className="flex items-center bg-gradient-to-r from-[#FA5252] to-[#DD2476] duration-200 transition ease-linear hover:bg-gradient-to-l from-[#DD2476]  to-[#fa5252ef] px-8 py-3 text-lg text-white rounded-[35px] mt-6"
+        >
+          <img src="/images/download.png" alt="icon" className="mr-2" />
+          Download CV
+        </a>
       </div>
       {/* End .col and routePath image left */}
 
@@ -36,6 +39,7 @@ const index = () => {
           <h3 className="text-4xl font-medium dark:text-white mb-2.5 ">
             Who am i?
           </h3>
+
           <p className="text-gray-lite  dark:text-color-910 leading-7 text-[17px]">
             👋 Hello there! I&apos;m Aya, a full stack developer based in
             Vancouver, BC. <br />A passionate and agile Full Stack Web Developer
