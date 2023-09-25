@@ -248,8 +248,10 @@ const Works = () => {
                               loading="lazy"
                             />
                             <div
-                              className={`flex flex-col px-6 justify-center md:${
-                                index % 2 === 0 ? "text-left" : "text-right"
+                              className={`flex flex-col px-6 justify-center ${
+                                index % 2 === 0
+                                  ? "md:text-left"
+                                  : "text-left md:text-right"
                               }`}
                             >
                               <h3 className="dark:text-white text-lg font-semibold">
