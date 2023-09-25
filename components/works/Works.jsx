@@ -221,65 +221,77 @@ const Works = () => {
                 </div>
 
                 {/* //////// if description2 exists //////// */}
-                {singleData?.description2 ? (
-                  singleData.description2.map((item, index) => (
-                    <div key={index}>
-                      <div
-                        className={`flex mt-7 ${
-                          index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                        }`}
+                <div>
+                  {singleData?.description2 ? (
+                    <>
+                      <p
+                        className="dark:text-white text-2line font-normal text-[15px] sm:text-sm"
+                        style={{ whiteSpace: "pre-line" }}
+                      >
+                        {singleData?.description}
+                      </p>
+                      {singleData.description2.map((item, index) => (
+                        <div key={index}>
+                          <div
+                            className={`flex ${
+                              index % 2 === 0
+                                ? "flex-col md:flex-row"
+                                : "flex-col md:flex-row-reverse"
+                            } mt-7 items-center`}
+                          >
+                            <Image
+                              className="w-[90%] md:w-[60%] md:h-[220px] object-cover rounded-xl border-2 border-[#9C9FA1]"
+                              src={item.img}
+                              alt={item.title}
+                              width={300}
+                              height={200}
+                              loading="lazy"
+                            />
+                            <div
+                              className={`flex flex-col px-6 justify-center md:${
+                                index % 2 === 0 ? "text-left" : "text-right"
+                              }`}
+                            >
+                              <h3 className="dark:text-white text-lg font-semibold">
+                                {item.title}
+                              </h3>
+                              <p
+                                className="dark:text-white text-2line font-normal text-[15px] sm:text-sm pt-2"
+                                style={{ whiteSpace: "pre-line" }}
+                              >
+                                {item.content}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </>
+                  ) : (
+                    <>
+                      {/* //////// if description2 no exists //////// */}
+                      <p
+                        className="dark:text-white text-2line font-normal text-[15px] sm:text-sm"
+                        style={{ whiteSpace: "pre-line" }}
+                      >
+                        {singleData?.description}
+                      </p>
+                      <a
+                        href={singleData?.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <Image
-                          className="w-[60%] md:h-[220px] object-cover rounded-xl border border-[#333]"
-                          src={item.img}
-                          alt={item.title}
-                          width={300}
-                          height={200}
+                          className="w-full md:h-[450px] h-auto object-cover rounded-xl mt-6"
+                          src={singleData?.img}
+                          alt="blog details image"
+                          width={620}
+                          height={420}
                           loading="lazy"
                         />
-                        <div
-                          className={`flex flex-col px-6 justify-center ${
-                            index % 2 === 0 ? "text-left" : "text-right"
-                          }`}
-                        >
-                          <h3 className="dark:text-white text-lg font-semibold ">
-                            {item.title}
-                          </h3>
-                          <p
-                            className="dark:text-white text-2line font-normal text-[15px] sm:text-sm pt-2"
-                            style={{ whiteSpace: "pre-line" }}
-                          >
-                            {item.content}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <>
-                    {/* //////// if description2 no exists //////// */}
-                    <p
-                      className="dark:text-white text-2line font-normal text-[15px] sm:text-sm"
-                      style={{ whiteSpace: "pre-line" }}
-                    >
-                      {singleData?.description}
-                    </p>
-                    <a
-                      href={singleData?.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Image
-                        className="w-full md:h-[450px] h-auto object-cover rounded-xl mt-6"
-                        src={singleData?.img}
-                        alt="blog details image"
-                        width={620}
-                        height={420}
-                        loading="lazy"
-                      />
-                    </a>
-                  </>
-                )}
+                      </a>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </div>

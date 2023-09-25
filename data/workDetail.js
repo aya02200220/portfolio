@@ -28,12 +28,12 @@ module.exports = [
     imgSmall: "/images/work_images/small/1.png",
     bg: "#F1EBEC",
     client: "",
-    languages: "MongoDB, Express, React, Node.js, MUI",
+    languages: "MongoDB, Express, React, Node.js, MUI, Cloudinary",
     link: "https://noir-rose.vercel.app/",
     gitlink: "https://github.com/aya02200220/blog-app",
     linkText: "NoirRose Diaries",
     description:
-      "NoirRose is a modern blogging platform built with MERN Stack (MongoDB, Express, React, and Node.js). The application allows both guests and registered users to read blog posts. For additional features like posting blogs or adding to favorites, signing up is required.\n\nKey Features:\n- Read blogs as a guest or registered user\n- User authentication\n- Create, edit, delete blog posts (for registered users)\n- Add posts to your reading list (for registered users)\n- Cloud-based image storage with Cloudinary",
+      "NoirRose is a modern blogging platform built with MERN Stack (MongoDB, Express, React, and Node.js). The application allows both guests and registered users to read blog posts. For additional features like posting blogs or adding to favorites, signing up is required.",
     icon: [
       <SiMongodb />,
       <SiExpress />,
@@ -54,6 +54,12 @@ module.exports = [
         title: "Create a Reading List",
         content:
           "Stumble upon an interesting article? Don’t worry about losing it. With our 'Reading List' feature, you can effortlessly save posts you want to read later. Organize your reads and keep them just a click away.",
+      },
+      {
+        img: "/images/work_images/1/6.png",
+        title: "Interact with Comments",
+        content:
+          "Logged-in users can leave comments on any articles they like. Not only can users post comments, but they can also edit or delete their own comments after posting, providing a flexible way to express and refine their thoughts and opinions.",
       },
       {
         img: "/images/work_images/1/3.png",
@@ -88,8 +94,40 @@ module.exports = [
     gitlink: "https://github.com/aya02200220/Pokedex",
     linkText: "Pokédex",
     description:
-      "This project is a web-based Pokédex, built to help Pokémon enthusiasts find detailed information about their favorite Pokémon. The app features a clean and user-friendly interface, allowing users to quickly search and view Pokémon by various attributes.\n\nKey Features:\n- Search Pokémon by name.\n- View detailed information including types, abilities, and stats.\n- Toggle between standard and shiny sprites.\n- Option to switch between 2D and 3D sprites (if available).",
+      "This project is a web-based Pokédex, built to help Pokémon enthusiasts find detailed information about their favorite Pokémon. The app features a clean and user-friendly interface, allowing users to quickly search and view Pokémon by various attributes.",
     icon: [<FaReact />, <FaCss3Alt />, <SiMui />, <FaCss3Alt />],
+    description2: [
+      {
+        img: "/images/work_images/2/1.png",
+        title: "Browse Extensive Pokémon Data",
+        content:
+          "Explore a vast array of information available on PokeApi, encompassing every piece of data you might seek about Pokémon. From origins to abilities, everything is at your fingertips, allowing you a comprehensive look at the Pokémon universe.",
+      },
+      {
+        img: "/images/work_images/2/2.png",
+        title: "Quick Pokémon Search",
+        content:
+          "Navigate swiftly through our extensive Pokémon database using our efficient search bar. Just type in the name of the Pokémon you are looking for, and the search results will guide you to the exact information you need, eliminating the need to sift through countless options.",
+      },
+      {
+        img: "/images/work_images/2/3.png",
+        title: "Access Detailed Pokémon Profiles",
+        content:
+          "Choose any Pokémon and delve deep into detailed data profiles. From individual statistics to unique abilities, get to know your favorite Pokémon inside out. Experience the joy of discovery and learn the ins and outs of each Pokémon's characteristics.",
+      },
+      {
+        img: "/images/work_images/2/4.png",
+        title: "Versatile Pokémon Imaging",
+        content:
+          "Visualize Pokémon in various forms and perspectives with our versatile imaging options. Whether you prefer the normal or shiny, 2D or 3D versions, switch between them with ease and enjoy viewing Pokémon in diverse visual representations.",
+      },
+      {
+        img: "/images/work_images/2/5.png",
+        title: "Integrated Dark Mode",
+        content:
+          "Enhance your viewing experience with our integrated dark mode. Whether it's late at night or you simply prefer a darker theme, switch to dark mode to ease the strain on your eyes and enjoy a more comfortable browsing experience.",
+      },
+    ],
   },
   {
     id: "3",
