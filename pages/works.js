@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
+// import Header from "../components/header/Header";
+// import Footer from "../components/footer/Footer";
 import Works1 from "../components/works/Works1";
+import Works from "../components/works/Works";
 import Seo from "../components/seo/Seo";
 
 const index = () => {
@@ -16,7 +17,8 @@ const index = () => {
               <h2 className="after-effect after:left-40 mt-12 lg:mt-0 pb-2">
                 Works
               </h2>
-              <Works1 />
+              {/* <Works1 /> */}
+              <Works />
             </div>
           </div>
         </div>

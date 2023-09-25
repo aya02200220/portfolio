@@ -44,27 +44,34 @@ module.exports = [
     ],
     description2: [
       {
+        img: "/images/work_images/1/1.png",
         title: "Explore Posts on Home",
-        content: "View posts from all registered users in the 'Home' menu.",
+        content:
+          "The 'Home' menu allows you to browse through posts from all registered users, presenting a diverse range of articles. Discover new content and gain insights from different perspectives, all in one place.",
       },
       {
+        img: "/images/work_images/1/2.png",
         title: "Create a Reading List",
-        content: "Found an interesting article? Add it to your Reading List.",
+        content:
+          "Stumble upon an interesting article? Don’t worry about losing it. With our 'Reading List' feature, you can effortlessly save posts you want to read later. Organize your reads and keep them just a click away.",
       },
       {
+        img: "/images/work_images/1/3.png",
         title: "Follow Your Favorite Authors",
         content:
-          "If you find an author you like, you can view all of their posts.",
+          "Discover an author whose work you enjoy? You can easily view all posts from your favorite authors. Stay updated on their latest content and never miss an article from the writers you love.",
       },
       {
+        img: "/images/work_images/1/4-2.png",
         title: "Manage Your Account",
         content:
           "View your post history and update your email, password, bio, and avatar at any time from 'My Account'.",
       },
       {
+        img: "/images/work_images/1/5-2.png",
         title: "Forgot Your Password?",
         content:
-          "Easily reset it by clicking on 'Forgot Password?'. A link to reset your password will be sent to your registered email. This link is valid for one hour.",
+          "Easily reset it by clicking on 'Forgot Password?'.\nA link to reset your password will be sent to your registered email.\nThis link is valid for one hour.",
       },
     ],
   },

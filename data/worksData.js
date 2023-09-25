@@ -28,7 +28,7 @@ module.exports = [
     imgSmall: "/images/work_images/small/1.png",
     bg: "#F1EBEC",
     client: "",
-    languages: "MongoDB, Express, React, Node.js, MUI",
+    languages: "MongoDB, Express, React, Node.js, MUI, Cloudinary",
     link: "https://noir-rose.vercel.app/",
     gitlink: "https://github.com/aya02200220/blog-app",
     linkText: "NoirRose Diaries",
