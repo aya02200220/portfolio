@@ -225,7 +225,7 @@ const Works = () => {
                   {singleData?.description2 ? (
                     <>
                       <p
-                        className="dark:text-white text-2line font-normal text-[15px] sm:text-sm"
+                        className="dark:text-white text-2line font-normal text-[15px] sm:text-sm leading-5"
                         style={{ whiteSpace: "pre-line" }}
                       >
                         {singleData?.description}
@@ -254,11 +254,11 @@ const Works = () => {
                                   : "text-left md:text-right"
                               }`}
                             >
-                              <h3 className="dark:text-white text-lg font-semibold">
+                              <h3 className="dark:text-white text-lg font-semibold leading-5">
                                 {item.title}
                               </h3>
                               <p
-                                className="dark:text-white text-2line font-normal text-[15px] sm:text-sm pt-2"
+                                className="dark:text-white text-2line font-normal text-[13px] sm:text-sm pt-2 leading-[16px]"
                                 style={{ whiteSpace: "pre-line" }}
                               >
                                 {item.content}

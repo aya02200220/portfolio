@@ -26,7 +26,7 @@ module.exports = [
     title: "Blog Site",
     img: "/images/work_images/1.png",
     imgSmall: "/images/work_images/small/1.png",
-    bg: "#F1EBEC",
+    bg: "#D5C5C8",
     client: "",
     languages: "MongoDB, Express, React, Node.js, MUI, Cloudinary",
     link: "https://noir-rose.vercel.app/",
@@ -82,6 +82,67 @@ module.exports = [
     ],
   },
   {
+    id: "8",
+    tag: "E-commerce",
+    title: "New-MangaMart",
+    img: "/images/work_images/8.png",
+    imgSmall: "/images/work_images/small/8.png",
+    bg: "#F1EBEC",
+    client: "",
+    languages: "Next.js,TypeScript,Tailwind,MUI",
+    link: "https://manga-mart.vercel.app/",
+    gitlink: "https://github.com/aya02200220/Manga-mart-e-commerce",
+    linkText: "New-Manga-mart",
+    description:
+      "I revamped 'Manga Mart,' initially a simple JavaScript, HTML, and CSS project into a Next.js-based e-commerce site, enhancing it with modern features like Google login, a favorites system, and a cart function. This upgrade significantly modernizes the UI/UX, showcasing my growth in web development.",
+    icon: [
+      <FaReact />,
+      <TbBrandNextjs />,
+      <SiTypescript />,
+      <SiTailwindcss />,
+      <SiMui />,
+      <FaCss3Alt />,
+    ],
+    description2: [
+      {
+        img: "/images/work_images/8/1.png",
+        title: "Discover Manga on Home Page",
+        content:
+          "Manga Mart's homepage displays a diverse manga collection under the default 'ALL' category. Users can filter manga by genre using genre buttons, customizing their browsing experience effortlessly.",
+      },
+      {
+        img: "/images/work_images/8/1-2.png",
+        title: "Search Manga by Title or Description",
+        content:
+          "Manga Mart's search feature in the header simplifies manga discovery by enabling users to find titles or explore content based on keywords in the title or description.",
+      },
+      {
+        img: "/images/work_images/8/2.png",
+        title: "Explore Manga Details",
+        content:
+          "Clicking on a manga title reveals its synopsis, storyline, and characters. Users can easily add the manga to favorites or the shopping cart directly from this screen, streamlining their browsing and purchasing experience.",
+      },
+      {
+        img: "/images/work_images/8/3.png",
+        title: "Manage Cart Items",
+        content:
+          "The Cart page allows users to modify quantities, remove items individually or in bulk, and proceed to the checkout screen seamlessly. With intuitive controls, users can adjust their cart contents effortlessly, ensuring a smooth and efficient shopping experience.",
+      },
+      {
+        img: "/images/work_images/8/4.png",
+        title: "Manage Favorites",
+        content:
+          "In Favorites, users can add/remove items to/from their cart and delete favorites in bulk. This simplifies curating favorite manga, improving browsing.",
+      },
+      {
+        img: "/images/work_images/8/5.png",
+        title: "Checkout",
+        content:
+          "The checkout screen on Manga Mart displays the cart contents and prompts users to input details such as address and payment method. However, actual payment functionality is not included.",
+      },
+    ],
+  },
+  {
     id: "2",
     tag: "Website",
     title: "Pokédex",
@@ -95,7 +156,7 @@ module.exports = [
     linkText: "Pokédex",
     description:
       "This project is a web-based Pokédex, built to help Pokémon enthusiasts find detailed information about their favorite Pokémon. The app features a clean and user-friendly interface, allowing users to quickly search and view Pokémon by various attributes.",
-    icon: [<FaReact />, <FaCss3Alt />, <SiMui />, <FaCss3Alt />],
+    icon: [<FaReact />, <FaCss3Alt />, <SiMui />],
     description2: [
       {
         img: "/images/work_images/2/1.png",
