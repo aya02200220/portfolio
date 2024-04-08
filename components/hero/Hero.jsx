@@ -4,8 +4,10 @@ import Link from "next/link";
 import Social from "../social/Social";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import lightHeaderImg from "../../public/images/about/avatar.svg";
-import darkHeaderImg from "../../public/images/about/dark-avatar.svg";
+// import lightHeaderImg from "../../public/images/about/avatar.svg";
+import lightHeaderImg from "../../public/images/about/avatar3.png";
+// import darkHeaderImg from "../../public/images/about/dark-avatar.svg";
+import darkHeaderImg from "../../public/images/about/avatar2.png";
 
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
