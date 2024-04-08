@@ -268,7 +268,7 @@ module.exports = [
     bg: "#F1EBEC",
     client: "",
     languages: "Next.js,Tailwind CSS,",
-    link: "https://portfolio-aya02200220.vercel.app/",
+    link: "https://portfolio-aya02200220s-projects.vercel.app/",
     gitlink: "https://github.com/aya02200220/portfolio",
     linkText: "Portfolio",
     description:
