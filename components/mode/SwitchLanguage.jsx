@@ -15,7 +15,7 @@ export default function SwitchLanguage() {
       value={alignment}
       exclusive
       onChange={handleAlignment}
-      className="dark:bg-[#d9c0f18d]"
+      className="dark:bg-[#dfd0ed8d]"
     >
       <ToggleButton value="left" className="w-[60px] ">
         {/* <FormatAlignLeftIcon /> */}ENG
