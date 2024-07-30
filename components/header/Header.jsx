@@ -9,6 +9,7 @@ import { isActiveLink } from "../../utilis/linkActiveChecker";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import { smoothScroll } from "../Scroll";
+import SwitchLanguage from "../mode/SwitchLanguage";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -70,6 +71,7 @@ const Header = () => {
 
               {/* start mobile menu toggle and mode btn */}
               <div className="flex items-center">
+                <SwitchLanguage />
                 <DarkModeMobile />
                 {!menuOpen ? (
                   <span
