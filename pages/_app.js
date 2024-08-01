@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import "../styles/globals.css";
 import "../styles/custom.css";
 import { ToastContainer } from "react-toastify";
+import { LanguageProvider } from "../components/context/LanguageContext";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -24,10 +25,12 @@ export default function App({ Component, pageProps }) {
         draggable
         pauseOnHover
       />
-
-      <ThemeProvider attribute="class">
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <LanguageProvider>
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </LanguageProvider>
+      ,
     </>
   );
 }

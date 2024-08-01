@@ -9,6 +9,7 @@ import { isActiveLink } from "../../utilis/linkActiveChecker";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import { smoothScroll } from "../Scroll";
+import SwitchLanguage from "../mode/SwitchLanguage";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,8 +53,6 @@ const Header = () => {
           <div className=" flex justify-between w-full px-4 md:px-4 lg:px-5 bg-[#BF7581] lg:bg-transparent lg:dark:bg-transparent dark:bg-[#333333] ">
             <div className="flex justify-between w-full items-center space-x-4 my-2 lg:my-3 ">
               <Link className="text-5xl font-semibold " href="/">
-                {/* website logo  */}
-                {/* <h1>Hello!</h1> */}
                 <Image
                   className="h-[28px] lg:h-[35px]"
                   width={95}
@@ -70,6 +69,12 @@ const Header = () => {
 
               {/* start mobile menu toggle and mode btn */}
               <div className="flex items-center">
+                <div className="flex items-center pt-2">
+                  <div className="lg:hidden">
+                    <SwitchLanguage />
+                  </div>
+                </div>
+
                 <DarkModeMobile />
                 {!menuOpen ? (
                   <span
@@ -99,6 +104,7 @@ const Header = () => {
             } `}
           >
             {/* Menu items start  */}
+
             <ul
               className={`${
                 menuOpen
@@ -123,11 +129,17 @@ const Header = () => {
                 </li>
               ))}
               {/* light dark mode button start */}
+              <div className="flex items-center">
+                <div className="hidden lg:block ">
+                  <SwitchLanguage />
+                </div>
+              </div>
               <DarkMode />
               {/* light dark mode button end */}
             </ul>
             {/* Menu items end  */}
           </nav>
+
           {/* End mobile nav menu end */}
         </header>
         {/* Header menu End  */}
