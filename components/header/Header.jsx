@@ -69,10 +69,8 @@ const Header = () => {
 
               {/* start mobile menu toggle and mode btn */}
               <div className="flex items-center">
-                <div className="flex items-center pt-2">
-                  <div className="lg:hidden">
-                    <SwitchLanguage />
-                  </div>
+                <div className="lg:hidden">
+                  <SwitchLanguage />
                 </div>
 
                 <DarkModeMobile />
@@ -129,12 +127,12 @@ const Header = () => {
                 </li>
               ))}
               {/* light dark mode button start */}
-              <div className="flex items-center">
+              <div className="flex flex-row w-[90px] items-center">
                 <div className="hidden lg:block ">
                   <SwitchLanguage />
                 </div>
+                <DarkMode />
               </div>
-              <DarkMode />
               {/* light dark mode button end */}
             </ul>
             {/* Menu items end  */}
