@@ -31,7 +31,7 @@ const Works = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  const { language } = useLanguage(); // 現在の言語を取得
+  const { language } = useLanguage();
 
   const [data, setData] = useState([]);
 
