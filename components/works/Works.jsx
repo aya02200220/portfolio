@@ -15,8 +15,8 @@ import Modal from "react-modal";
 import portfolioData from "../../data/workDetail";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Github } from "react-bootstrap-icons";
 
+import { useLanguage } from "../context/LanguageContext";
 Modal.setAppElement("#__next");
 
 const Works = () => {
@@ -31,8 +31,25 @@ const Works = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
+  const { language } = useLanguage(); // 現在の言語を取得
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(portfolioData[language] || []);
+  }, [language]);
+
+  // const handlePortfolioData = (id) => {
+  //   const find = portfolioData.find((item) => item?.id === id);
+  //   setSingleData(find);
+  //   setIsOpen(true);
+  // };
+
   const handlePortfolioData = (id) => {
-    const find = portfolioData.find((item) => item?.id === id);
+    const data = Array.isArray(portfolioData)
+      ? portfolioData
+      : portfolioData[language] || [];
+    const find = data.find((item) => item?.id === id);
     setSingleData(find);
     setIsOpen(true);
   };
@@ -40,7 +57,6 @@ const Works = () => {
   const handleModal = (id) => {
     handlePortfolioData(id);
   };
-  // End dynamic portfolio with slug
 
   // start filter data based on function
   const [category, setCategory] = useState("All");
@@ -54,14 +70,24 @@ const Works = () => {
     handleData("All");
   }, []);
 
-  const [data, setData] = useState(portfolioData);
-
   // filter
+  // const handleData = (text) => {
+  //   if (text === "All") {
+  //     setData(portfolioData);
+  //   } else {
+  //     const findData = portfolioData.filter((item) => item.tag === text);
+  //     setData(findData);
+  //   }
+  // };
+
   const handleData = (text) => {
+    const currentData = portfolioData[language] || [];
     if (text === "All") {
-      setData(portfolioData);
+      setData(Array.isArray(currentData) ? currentData : []);
     } else {
-      const findData = portfolioData.filter((item) => item.tag === text);
+      const findData = Array.isArray(currentData)
+        ? currentData.filter((item) => item.tag === text)
+        : [];
       setData(findData);
     }
   };
@@ -111,52 +137,55 @@ const Works = () => {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {data.map((item) => (
-          <div
-            data-aos="flip-left"
-            data-aos-duration="1000"
-            className="rounded-lg"
-          >
+        {/* {data?.map((item, index) => ( */}
+        {Array.isArray(data) &&
+          data.map((item, index) => (
             <div
-              className="rounded-lg p-6 dark:border-[2px] border-[#212425]"
-              style={{
-                background: `${theme === "dark" ? "transparent" : item?.bg}`,
-              }}
-              key={item.id}
-              onClick={() => handleModal(item?.id)}
+              key={index}
+              data-aos="flip-left"
+              data-aos-duration="1000"
+              className="rounded-lg"
             >
-              <div className="overflow-hidden rounded-lg">
-                <Image
-                  className="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-[200px] object-cover"
-                  src={item.imgSmall}
-                  width={310}
-                  height={200}
-                  priority
-                  alt="portfolio Image"
-                />
-              </div>
-              <span className="pt-5 text-[14px] font-normal text-gray-lite block dark:text-[#A6A6A6]">
-                {item.tag}
-              </span>
-              <h2 className="font-medium cursor-pointer text-xl duration-300 transition hover:text-[#d54b87] dark:hover:text-[#d54b87] dark:text-white mt-2">
-                {item.title}
-              </h2>
+              <div
+                className="rounded-lg p-6 dark:border-[2px] border-[#212425]"
+                style={{
+                  background: `${theme === "dark" ? "transparent" : item?.bg}`,
+                }}
+                key={item.id}
+                onClick={() => handleModal(item?.id)}
+              >
+                <div className="overflow-hidden rounded-lg">
+                  <Image
+                    className="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-[200px] object-cover"
+                    src={item.imgSmall}
+                    width={310}
+                    height={200}
+                    priority
+                    alt="portfolio Image"
+                  />
+                </div>
+                <span className="pt-5 text-[14px] font-normal text-gray-lite block dark:text-[#A6A6A6]">
+                  {item.tag}
+                </span>
+                <h2 className="font-medium cursor-pointer text-xl duration-300 transition hover:text-[#d54b87] dark:hover:text-[#d54b87] dark:text-white mt-2">
+                  {item.title}
+                </h2>
 
-              <div className="flex gap-3 mt-3">
-                {item.icon.map((iconItem, index) => {
-                  return (
-                    <div
-                      className="text-3xl text-[#747474] dark:text-[#dbdbdb]"
-                      key={index}
-                    >
-                      {iconItem}
-                    </div>
-                  );
-                })}
+                <div className="flex gap-3 mt-3">
+                  {item.icon.map((iconItem, index) => {
+                    return (
+                      <div
+                        className="text-3xl text-[#747474] dark:text-[#dbdbdb]"
+                        key={index}
+                      >
+                        {iconItem}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </Masonry>
       {/* End portfolio items */}
 
