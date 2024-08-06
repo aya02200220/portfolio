@@ -7,8 +7,6 @@ const index = () => {
   const { theme, setTheme } = useTheme();
   const { language } = useLanguage();
 
-  console.log("language", language);
-
   return (
     <div className="grid grid-cols-12 md:gap-10 pt-4 md:pt-[40px] items-center">
       {/* start .col and routePath image left */}
@@ -44,31 +42,58 @@ const index = () => {
             Who am i?
           </h3>
 
-          {language === "en" ? (
+          {language === "ja" ? (
             <>
-              <p className="text-gray-lite  dark:text-color-910 leading-7 text-[17px]">
-                👋 Hello there! I&apos;m Aya, a full stack developer based in
-                Vancouver, BC. <br />A passionate and agile Full Stack Web
-                Developer with a love for crafting elegant solutions to complex
-                problems. Coding isn&apos;t just a job for me; it&apos;s a
-                medium through which I strive for excellence and innovation.
+              <p className="text-gray-lite dark:text-color-910 leading-5 text-[16px] pb-2">
+                👋 Hello! I'm a full stack developer based in Vancouver, BC.
               </p>
-              <p className="text-gray-lite leading-7 mt-2.5 dark:text-color-910 text-[17px]">
-                Learning never stops in tech, and I'm committed to continuously
-                expanding my skillset. I'm a voracious reader, an experimental
-                coder, and a proactive community member who’s always looking for
-                opportunities to grow and help others grow.
+              <p className="text-gray-lite dark:text-color-910 leading-5 text-[16px] pb-2">
+                📚 I majored in web development at a college in Canada,
+                specializing in modern application development using
+                technologies such as React.js and Node.js. My experience as a
+                systems engineer, handling everything from requirements
+                definition to development, has laid the foundation for
+                user-centric development.
+              </p>
+              <p className="text-gray-lite dark:text-color-910 leading-5 text-[16px] pb-2">
+                🌎 In the world of technology, learning never ends! I actively
+                engage with new technologies and tools that interest me,
+                continuously striving for personal growth.
+              </p>
+              <p className="text-gray-lite dark:text-color-910 leading-5 text-[16px] pb-2">
+                🕹️ For me, coding is not just a job but also a joy, where I get
+                to unleash my creativity and enjoy the process of trial and
+                error 🤗
+              </p>
+              <p className="text-gray-lite leading-4 mt-2.5 dark:text-color-910 text-[12px]">
+                Hobbies: Manga (shonen manga fan)・Anime (usually prefer the
+                original manga)・Gaming (better at watching)・Movies
+                (SF/Suspense/Action/Harry Potter)・Disney (both watching and
+                visiting)・Cafe
+                hopping・Crab・Sunshine・Snowboarding・Technological
+                advancements (thrilling and exciting)
               </p>
             </>
           ) : (
             <>
-              {" "}
-              <p className="text-gray-lite  dark:text-color-910 leading-7 text-[17px]">
-                👋
-                こんにちは！私はバンクーバー（BC）を拠点に活動しているフルスタック開発者です。テクノロジーの世界では学びが終わることはありません。私は常にスキルを磨き続けることに全力を尽くしています。私にとってコーディングは単なる仕事ではなく、シンプルにコーディングすることが好きで、試行錯誤を重ねながらコードを書くことを楽しんでいます。
+              <p className="text-gray-lite  dark:text-color-910 leading-5.5 text-[15px] pb-1">
+                👋{" "}
+                こんにちは！私はバンクーバー（BC）を拠点に活動しているフルスタック開発者です。
               </p>
-              <p className="text-gray-lite leading-5 mt-2.5 dark:text-color-910 text-[12px]">
-                趣味：マンガ（少年漫画派）・アニメ（基本原作漫画の方が好き）・ゲーム（観る方が得意）・映画（SF/サスペンス/アクション/ハリポタ）・DIsney（観るのも行くのも）・カフェホッピング（ラテアート大事）・カニ・太陽・スノーボード（久しく行ってない）・テクノロジーの進化（ドキドキワクワク）
+              <p className="text-gray-lite  dark:text-color-910 leading-5.5 text-[15px] pb-1">
+                📚{" "}
+                カナダのカレッジでWeb開発を専攻し、特にReact.jsやNode.jsなどを活用したモダンなアプリケーション開発に強みを持ちます。SEとして要件定義から開発までを一貫して担当した経験はユーザー目線での開発に活かす基盤となっています。
+              </p>
+              <p className="text-gray-lite  dark:text-color-910 leading-5.5 text-[15px] pb-1">
+                🌎{" "}
+                テクノロジーの世界では学びが終わることはありません！興味のある技術やツールに積極的に取り組み、常に自己成長を目指す努力を継続しています。
+              </p>
+              <p className="text-gray-lite  dark:text-color-910 leading-5.5 text-[15px] pb-1">
+                🕹️{" "}
+                私にとってコーディングは単なる仕事ではなく、創造性を発揮しながら試行錯誤を重ねる楽しみでもあります🤗
+              </p>
+              <p className="text-gray-lite leading-4 mt-2.5 dark:text-color-910 text-[12px]">
+                趣味：マンガ（少年漫画派）・アニメ（基本原作漫画の方が好き）・ゲーム（観る方が得意）・映画（SF/サスペンス/アクション/ハリポタ）・DIsney（観るのも行くのも）・カフェホッピング・カニ・太陽・スノーボード・テクノロジーの進化（ドキドキワクワク）
               </p>
             </>
           )}

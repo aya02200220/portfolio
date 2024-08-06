@@ -80,7 +80,9 @@ const CommonContact = ({ condition }) => {
       >
         <button
           className=" text-6xl font-medium text-white dark:text-white duration-300 transition cursor-pointer px-6 py-2 bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-200 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-lg text-white rounded-lg"
-          onClick={() => (window.location.href = "mailto:pyon220@gmail.com")}
+          onClick={() =>
+            (window.location.href = "mailto:aya.dev.canada@gmail.com")
+          }
         >
           👋 Say Hello
         </button>

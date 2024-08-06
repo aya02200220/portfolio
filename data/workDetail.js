@@ -20,7 +20,7 @@ import { FaCss3Alt } from "react-icons/fa6";
 import { TbBrandNextjs } from "react-icons/tb";
 
 module.exports = {
-  en: [
+  ja: [
     {
       id: "1",
       tag: "Web application",
@@ -277,7 +277,7 @@ module.exports = {
       icon: [<TbBrandNextjs />, <SiTailwindcss />, <FaCss3Alt />, <SiMui />],
     },
   ],
-  ja: [
+  en: [
     {
       id: "1",
       tag: "Web application",

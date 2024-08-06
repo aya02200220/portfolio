@@ -7,7 +7,7 @@ const Social = () => {
   const socialContent = [
     {
       id: 1,
-      link: "mailto:pyon220@gmail.com",
+      link: "mailto:aya.dev.canada@gmail.com",
       icon: <FiMail />,
       iconClass: "text-[#4A68DA]",
     },
