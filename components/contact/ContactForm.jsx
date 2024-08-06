@@ -7,12 +7,15 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { HiOutlineMail } from "react-icons/hi";
 
+import { useLanguage } from "../context/LanguageContext";
+
 const CommonContact = ({ condition }) => {
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
   const { theme, setTheme } = useTheme();
+  const { language } = useLanguage();
 
   const form = useRef();
 
@@ -59,18 +62,35 @@ const CommonContact = ({ condition }) => {
       } bg-[#F1EBEC] rounded-xl dark:bg-[#333] lg:h-[430px] xl:h-[430px]`}
     >
       <h3 className="text-center">
-        <span className="font-medium dark:text-white text-[25px] leading-7 ">
-          You can reach me via social media or drop me an email{" "}
-          <HiOutlineMail className="inline-block" /> here!
-        </span>
-
-        <br />
-        <br />
-        <span className="text-gray-lite dark:text-[#A6A6A6] ">
-          I'm eager to explore the realm of web development further! Let's
-          connect if you want to chat about tech, grab a coffee, or simply say
-          hello.
-        </span>
+        {language === "ja" ? (
+          <>
+            {" "}
+            <span className="font-medium dark:text-white text-[25px] leading-7 ">
+              You can reach me via social media or drop me an email{" "}
+              <HiOutlineMail className="inline-block" /> here!
+            </span>
+            <br />
+            <br />
+            <span className="text-gray-lite dark:text-[#A6A6A6] ">
+              I'm eager to explore the realm of web development further! Let's
+              connect if you want to chat about tech, grab a coffee, or simply
+              say hello.
+            </span>
+          </>
+        ) : (
+          <>
+            {" "}
+            <span className="font-medium dark:text-white text-[23px] leading-7 ">
+              ソーシャルメディア経由、またはこちらからご連絡ください
+              <HiOutlineMail className="inline-block" />！
+            </span>
+            <br />
+            <br />
+            <span className="text-gray-lite dark:text-[#A6A6A6] text-[15px]">
+              ウェブ開発の世界をもっと探求したいです！技術について話したり、コーヒーを飲んだり、気軽に挨拶したりしたい方は、ぜひ繋がりましょう!
+            </span>
+          </>
+        )}
       </h3>
 
       <div
