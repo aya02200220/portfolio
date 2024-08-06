@@ -60,7 +60,8 @@ const Blog = () => {
                 </span>
               </div>
               <h3
-                onClick={() => setIsOpen(true)}
+                // onClick={() => setIsOpen(true)}
+                onClick={() => handleModal(item?.id)}
                 className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#ef4060] dark:hover:text-[#ef4060]"
               >
                 {item?.title}

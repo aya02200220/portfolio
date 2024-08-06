@@ -273,7 +273,7 @@ module.exports = {
       gitlink: "https://github.com/aya02200220/portfolio",
       linkText: "Portfolio",
       description:
-        "My Portfolio is an immersive digital showcase encapsulating the journey, skills, and creativity of Aya Ishimura. Designed with precision and an eye for aesthetics, this portfolio stands as a testament to Aya's dedication to her craft, her continuous learning curve, and her prowess in web development and design.",
+        "My Portfolio is an immersive digital showcase encapsulating the journey, skills, and creativity of mine. Designed with precision and an eye for aesthetics, this portfolio stands as a testament to Aya's dedication to her craft, her continuous learning curve, and her prowess in web development and design.",
       icon: [<TbBrandNextjs />, <SiTailwindcss />, <FaCss3Alt />, <SiMui />],
     },
   ],
@@ -527,7 +527,7 @@ module.exports = {
       gitlink: "https://github.com/aya02200220/portfolio",
       linkText: "ポートフォリオ",
       description:
-        "私のポートフォリオは、Aya Ishimuraの旅路、スキル、創造性を網羅した没入型のデジタルショーケースです。精密に設計され、美的感覚に優れたこのポートフォリオは、Ayaの職人技への献身、継続的な学習の軌跡、ウェブ開発およびデザインにおける卓越性の証です。",
+        "私のポートフォリオは、私の今までの旅路、スキル、創造性を紹介するためのデジタルショーケースです。色使いやデザインなど、自分らしさを詰め込みました。継続的な私の成長の軌跡を更新していけたらいいなと思っています。",
       icon: [<TbBrandNextjs />, <SiTailwindcss />, <FaCss3Alt />, <SiMui />],
     },
   ],
