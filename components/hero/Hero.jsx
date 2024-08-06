@@ -4,9 +4,7 @@ import Link from "next/link";
 import Social from "../social/Social";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import lightHeaderImg from "../../public/images/about/avatar.svg";
 import lightHeaderImg from "../../public/images/about/avatar3.png";
-// import darkHeaderImg from "../../public/images/about/dark-avatar.svg";
 import darkHeaderImg from "../../public/images/about/avatar2.png";
 
 import { ArrowRightCircle } from "react-bootstrap-icons";
@@ -15,6 +13,8 @@ import TrackVisibility from "react-on-screen";
 import { Button, TypographyProps } from "@material-tailwind/react";
 import { useTheme } from "next-themes";
 import { smoothScroll } from "../Scroll";
+
+import { useLanguage } from "../context/LanguageContext";
 
 export const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -27,6 +27,7 @@ export const Hero = () => {
   const toRotate = ["A Full-Stack Developer.", "Based in Vancouver."];
   const period = 1000;
   const { theme, setTheme } = useTheme();
+  const { language } = useLanguage();
 
   const handleLinkClick = (e, targetID) => {
     e.preventDefault();
@@ -116,6 +117,8 @@ export const Hero = () => {
                     >
                       Welcome to my Portfolio
                     </span>
+
+                    {/* {language === "ja" ? ():()} */}
                     <h1
                       className={`text-6xl md:text-8xl lg:text-9xl md:h-[140px] lg:h-[195px] ${
                         theme === "dark" ? "text-[#fbf7fb]" : "text-[#2B2B2B]"
@@ -123,6 +126,7 @@ export const Hero = () => {
                     >
                       {`Hi! I'm Aya`}
                       <br />
+
                       <span
                         className="txt-rotate"
                         // dataPeriod="1000"
@@ -131,15 +135,31 @@ export const Hero = () => {
                         <span className="wrap">{text}</span>
                       </span>
                     </h1>
-                    <p
-                      className={
-                        theme === "dark" ? "text-[#777777]" : "text-[#676262]"
-                      }
-                    >
-                      Feel free to reach out if you want to discuss technology,
-                      collaboration, or just a chat over coffee. My inbox is
-                      always open!
-                    </p>
+
+                    {language === "ja" ? (
+                      <p
+                        className={
+                          theme === "dark"
+                            ? "text-[#777777] text-[18px]"
+                            : "text-[#676262] text-[18px]"
+                        }
+                      >
+                        Feel free to reach out if you want to discuss
+                        technology, collaboration, or just a chat over coffee.
+                        My inbox is always open!
+                      </p>
+                    ) : (
+                      <p
+                        className={
+                          theme === "dark"
+                            ? "text-[#777777] text-[17px]"
+                            : "text-[#676262] text-[17px]"
+                        }
+                      >
+                        技術について話し合いたい、コラボレーションについて相談したい、あるいはただコーヒーを飲みながらおしゃべりしたい場合は、いつでもご連絡ください。
+                        私のメールボックスは常に開いています！
+                      </p>
+                    )}
 
                     {/* Connect */}
                     <div className="flex flex-col md:flex-row items-center mt-4 gap-8">

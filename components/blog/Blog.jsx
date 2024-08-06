@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BsXCircle } from "react-icons/bs";
 import Modal from "react-modal";
 import blogsData from "../../data/blogsData";
@@ -8,15 +9,24 @@ import CommentBox from "./CommentBox";
 import { useTheme } from "next-themes";
 import Comments from "./Comments";
 
+import { useLanguage } from "../context/LanguageContext";
+
 import { BiLinkExternal, BiLogoDevTo } from "react-icons/bi";
 
 const Blog = () => {
   const [singleData, setSingleData] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { language } = useLanguage();
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(blogsData[language] || []);
+  }, [language]);
 
   const handleBlogsData = (id) => {
-    const find = blogsData.find((item) => item?.id === id);
+    const find = data.find((item) => item?.id === id);
     setSingleData(find);
     setIsOpen(true);
   };
@@ -29,46 +39,48 @@ const Blog = () => {
 
   return (
     <div className="grid gap-x-10 gap-y-7 mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-[40px]">
-      {blogsData.map((item) => {
-        return (
-          <div
-            data-aos="flip-left"
-            data-aos-duration="1000"
-            className="rounded-lg"
-          >
+      {Array.isArray(data) &&
+        data.map((item) => {
+          return (
             <div
-              key={item.id}
-              style={{
-                background: `${theme === "dark" ? "#212425" : item?.bg}`,
-              }}
-              className="p-5 rounded-lg mb-2 h-full dark:border-[#212425] dark:border-2"
+              data-aos="flip-left"
+              data-aos-duration="1000"
+              className="rounded-lg"
             >
-              <div className="overflow-hidden rounded-lg">
-                <Image
-                  onClick={() => handleModal(item?.id)}
-                  className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 h-[200px] object-cover"
-                  src={item?.imgSmall}
-                  alt="blog"
-                  width={310}
-                  height={200}
-                />
-              </div>
-              <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">
-                <span>{item?.date}</span>
-                <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
-                  {item?.category}
-                </span>
-              </div>
-              <h3
-                onClick={() => setIsOpen(true)}
-                className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#ef4060] dark:hover:text-[#ef4060]"
+              <div
+                key={item.id}
+                style={{
+                  background: `${theme === "dark" ? "#212425" : item?.bg}`,
+                }}
+                className="p-5 rounded-lg mb-2 h-full dark:border-[#212425] dark:border-2"
               >
-                {item?.title}
-              </h3>
+                <div className="overflow-hidden rounded-lg">
+                  <Image
+                    onClick={() => handleModal(item?.id)}
+                    className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 h-[200px] object-cover"
+                    src={item?.imgSmall}
+                    alt="blog"
+                    width={310}
+                    height={200}
+                  />
+                </div>
+                <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">
+                  <span>{item?.date}</span>
+                  <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
+                    {item?.category}
+                  </span>
+                </div>
+                <h3
+                  // onClick={() => setIsOpen(true)}
+                  onClick={() => handleModal(item?.id)}
+                  className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#ef4060] dark:hover:text-[#ef4060]"
+                >
+                  {item?.title}
+                </h3>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
 
       {/* Blog modal start  */}
       <Modal

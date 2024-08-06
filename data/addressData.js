@@ -7,10 +7,10 @@ module.exports = [
       <>
         <p>
           <a
-            href="mailto:pyon220@gmail.com"
-            className="text-gray-lite text-lg dark:text-[#A6A6A6] "
+            href="mailto:aya.dev.canada@gmail.com"
+            className="text-gray-lite text-sm dark:text-[#A6A6A6] "
           >
-            pyon220@gmail.com
+            aya.dev.canada@gmail.com
           </a>
         </p>
       </>
