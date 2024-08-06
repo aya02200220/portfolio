@@ -133,14 +133,9 @@ const Header = () => {
                 </div>
                 <DarkMode />
               </div>
-              {/* light dark mode button end */}
             </ul>
-            {/* Menu items end  */}
           </nav>
-
-          {/* End mobile nav menu end */}
         </header>
-        {/* Header menu End  */}
       </div>
     </div>
   );

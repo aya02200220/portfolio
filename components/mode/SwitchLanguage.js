@@ -10,7 +10,7 @@ export default function SwitchLanguage() {
   const isEnglish = language === "en";
 
   return (
-    <div className="flex items-center justify-center h-full">
+    <div className="relative flex flex-col items-center justify-center h-full w-[40px]">
       <Image
         src={isEnglish ? engIcon : jpIcon}
         alt={isEnglish ? "English" : "Japanese"}
@@ -18,6 +18,14 @@ export default function SwitchLanguage() {
         style={{ cursor: "pointer" }}
         height={40}
       />
+      <p
+        className="text-[10px] text-[#333] absolute top-0 left-0 w-[40px] h-full flex items-center justify-center pointer-events-none font-bold bg-[#ffffff67] rounded-full
+        "
+        style={{ zIndex: 1 }}
+      >
+        {language === "ja" ? "日本語" : "English"}
+      </p>
+
       <Switch
         style={{ display: "none" }}
         checked={isEnglish}
