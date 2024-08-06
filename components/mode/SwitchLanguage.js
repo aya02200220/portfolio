@@ -19,7 +19,14 @@ export default function SwitchLanguage() {
         height={40}
       />
       <p
-        className="text-[10px] text-[#333] absolute top-0 left-0 w-[40px] h-full flex items-center justify-center pointer-events-none font-bold bg-[#ffffff67] rounded-full
+        className="text-[10px] text-[#fff] absolute top-[1px] left-0 w-[40px] h-full flex items-center justify-center pointer-events-none font-extrabold
+        "
+        style={{ zIndex: 1 }}
+      >
+        {language === "ja" ? "日本語" : "English"}
+      </p>
+      <p
+        className="text-[10px] text-[#333] absolute top-0 left-0 w-[40px] h-full flex items-center justify-center pointer-events-none font-bold bg-[#ffffff4a] rounded-full
         "
         style={{ zIndex: 1 }}
       >
