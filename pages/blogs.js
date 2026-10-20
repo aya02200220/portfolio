@@ -1,28 +1,17 @@
-import Seo from "../components/seo/Seo";
 import dynamic from "next/dynamic";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
 import Blog from "../components/blog/Blog";
+import Section from "../components/section/Section";
+import Seo from "../components/seo/Seo";
 
-const index = () => {
+const BlogsPage = () => {
   return (
-    <div className="bg-homeBg min-h-screen dark:bg-homeBg-dark bg-no-repeat bg-center bg-cover bg-fixed  md:pb-16 w-full">
+    <>
       <Seo pageTitle="Blog" />
-
-      <div className="container lg:rounded-2xl bg-white dark:bg-[#333]   ">
-        <div data-aos="fade-up" data-aos-duration="900">
-          <div className="px-4 sm:px-5 md:px-10 lg:px-[60px]">
-            <div className="py-12">
-              <h2 className="after-effect after:left-32 mt-12 lg:mt-0">
-                Blogs
-              </h2>
-              <Blog />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <Section index="03" kicker="Blogs" title="Notes from" accent="the desk.">
+        <Blog />
+      </Section>
+    </>
   );
 };
 
-export default dynamic(() => Promise.resolve(index), { ssr: false });
+export default dynamic(() => Promise.resolve(BlogsPage), { ssr: false });

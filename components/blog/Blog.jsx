@@ -1,142 +1,71 @@
-import { BsXCircle } from "react-icons/bs";
-import Modal from "react-modal";
-import blogsData from "../../data/blogsData";
 import Image from "next/image";
 import { useState } from "react";
-import Social from "../social/Social";
-import CommentBox from "./CommentBox";
-import { useTheme } from "next-themes";
-import Comments from "./Comments";
-
+import Modal from "react-modal";
+import { FiArrowUpRight, FiX } from "react-icons/fi";
+import blogsData from "../../data/blogsData";
 import { useLanguage } from "../context/LanguageContext";
-
-import { BiLinkExternal, BiLogoDevTo } from "react-icons/bi";
+import Reveal from "../Reveal";
+import sheet from "../works/Works.module.css";
+import styles from "./Blog.module.css";
 
 const Blog = () => {
-  const [singleData, setSingleData] = useState({});
-  const [isOpen, setIsOpen] = useState(false);
-  const { resolvedTheme: theme, setTheme } = useTheme();
   const { language } = useLanguage();
-
-  const data = blogsData[language] || [];
-
-  const handleBlogsData = (id) => {
-    const find = data.find((item) => item?.id === id);
-    setSingleData(find);
-    setIsOpen(true);
-  };
-
-  const handleModal = (id) => {
-    handleBlogsData(id);
-  };
-
-  const blogDescriptionSplit = singleData?.description?.split("\n");
+  const posts = blogsData[language] || [];
+  const [selected, setSelected] = useState(null);
 
   return (
-    <div className="grid gap-x-10 gap-y-7 mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-[40px]">
-      {Array.isArray(data) &&
-        data.map((item) => {
-          return (
-            <div
-              key={item.id}
-              data-aos="flip-left"
-              data-aos-duration="1000"
-              className="rounded-lg"
-            >
-              <div
-                style={{
-                  background: `${theme === "dark" ? "#212425" : item?.bg}`,
-                }}
-                className="p-5 rounded-lg mb-2 h-full dark:border-[#212425] dark:border-2"
-              >
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    onClick={() => handleModal(item?.id)}
-                    className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 h-[200px] object-cover"
-                    src={item?.imgSmall}
-                    alt="blog"
-                    width={310}
-                    height={200}
-                  />
-                </div>
-                <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">
-                  <span>{item?.date}</span>
-                  <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
-                    {item?.category}
-                  </span>
-                </div>
-                <h3
-                  // onClick={() => setIsOpen(true)}
-                  onClick={() => handleModal(item?.id)}
-                  className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#ef4060] dark:hover:text-[#ef4060]"
-                >
-                  {item?.title}
-                </h3>
+    <>
+      <div className={styles.grid}>
+        {posts.map((post, i) => (
+          <Reveal key={post.id} delay={(i % 3) * 90}>
+            <button type="button" className={styles.card} onClick={() => setSelected(post)}>
+              <div className={styles.thumb}>
+                <Image src={post.imgSmall} width={620} height={400} alt={post.title} />
               </div>
-            </div>
-          );
-        })}
+              <div className={styles.meta}>
+                <p className={styles.date}>
+                  {post.date}
+                  {post.category && <span>{post.category}</span>}
+                </p>
+                <h3>{post.title}</h3>
+                <p className={styles.excerpt}>{post.description}</p>
+                <span className={styles.more}>
+                  Read <FiArrowUpRight />
+                </span>
+              </div>
+            </button>
+          </Reveal>
+        ))}
+      </div>
 
-      {/* Blog modal start  */}
       <Modal
-        isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
-        className="outline-none flex items-center p-4 md:p-8  rounded-2xl my-8 "
+        isOpen={!!selected}
+        onRequestClose={() => setSelected(null)}
+        className={sheet.modal}
+        overlayClassName={sheet.overlay}
+        closeTimeoutMS={200}
       >
-        <div className=" w-full md:w-10/12 flex items-center lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 transform -translate-x-[50%]  -translate-y-[45%] md:-translate-y-[50%] shadow-lg xs:mt-30 sm:mt-10 lg:mt-5">
-          <div className="scrollbarLight overflow-y-scroll max-h-[80vh]">
-            {/* <div className="pr-3 pb-2"> */}
-            <BsXCircle
-              onClick={() => setIsOpen(false)}
-              className="text-7xl cursor-pointer  absolute right-2 top-1 md:top-22 md:-right-12 md:-top-0  text-[#333] md:text-white transition transform hover:rotate-45 duration-300 ease-in-out "
-            />
-            <Image
-              className=" w-full md:h-[450px]  object-cover rounded-xl mt-6"
-              src={singleData?.img}
-              alt="blog"
-              width={700}
-              height={400}
-              loading="lazy"
-            />
-            <div className="flex mt-4 text-tiny text-black dark:text-white">
-              <span>{singleData?.date}</span>
-              {/* <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
-                  {singleData?.category}
-                </span> */}
+        {selected && (
+          <div className={sheet.sheet}>
+            <button type="button" className={sheet.close} onClick={() => setSelected(null)} aria-label="Close">
+              <FiX />
+            </button>
+            <p className={sheet.sheetTag}>{selected.date}</p>
+            <h3 className={sheet.sheetTitle}>{selected.title}</h3>
+            <div className={sheet.hero}>
+              <Image src={selected.img} width={1200} height={680} alt={selected.title} />
             </div>
-            <h2 className="dark:text-white sm:text-3xl mt-2 font-medium">
-              {singleData?.title}
-            </h2>
-            {blogDescriptionSplit?.map((item, j) => (
-              <p
-                className="dark:text-white font-normal text-[15px] sm:text-sm my-4"
-                key={j}
-              >
-                {item}
-              </p>
-            ))}{" "}
-            <p className="flex items-center justify-center">
-              <div className="text-[40px]">
-                {" "}
-                <BiLogoDevTo />
-              </div>
-              <button className=" text-md font-medium dark:text-white duration-300 transition cursor-pointer px-2 py-1 hover:text-[#fff] dark:hover:text-[#fff] bg-[#BF7581] rounded">
-                {" "}
-                <a
-                  href={singleData?.link}
-                  target="_blank"
-                  className="flex items-center"
-                >
-                  READ MORE <BiLinkExternal style={{ marginLeft: "5px" }} />
-                </a>
-              </button>
-            </p>
-            {/* </div> */}
+            <p className={sheet.description}>{selected.description}</p>
+            <div className={sheet.links}>
+              <a href={selected.link} target="_blank" rel="noopener noreferrer" className={sheet.primary}>
+                Read on DEV
+                <FiArrowUpRight />
+              </a>
+            </div>
           </div>
-        </div>
+        )}
       </Modal>
-      {/* Blog modal End  */}
-    </div>
+    </>
   );
 };
 
