@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BsXCircle } from "react-icons/bs";
 import Modal from "react-modal";
 import blogsData from "../../data/blogsData";
@@ -16,14 +15,10 @@ import { BiLinkExternal, BiLogoDevTo } from "react-icons/bi";
 const Blog = () => {
   const [singleData, setSingleData] = useState({});
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
   const { language } = useLanguage();
 
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    setData(blogsData[language] || []);
-  }, [language]);
+  const data = blogsData[language] || [];
 
   const handleBlogsData = (id) => {
     const find = data.find((item) => item?.id === id);
@@ -43,12 +38,12 @@ const Blog = () => {
         data.map((item) => {
           return (
             <div
+              key={item.id}
               data-aos="flip-left"
               data-aos-duration="1000"
               className="rounded-lg"
             >
               <div
-                key={item.id}
                 style={{
                   background: `${theme === "dark" ? "#212425" : item?.bg}`,
                 }}

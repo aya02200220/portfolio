@@ -3,8 +3,8 @@ import PersonalInfo from "./PersonalInfo";
 import { useTheme } from "next-themes";
 import { useLanguage } from "../../context/LanguageContext";
 
-const index = () => {
-  const { theme, setTheme } = useTheme();
+const About = () => {
+  const { resolvedTheme: theme, setTheme } = useTheme();
   const { language } = useLanguage();
 
   return (
@@ -45,15 +45,16 @@ const index = () => {
           {language === "ja" ? (
             <>
               <p className="text-gray-lite dark:text-color-910 leading-5 text-[16px] pb-2">
-                👋 Hello! I'm a full stack developer based in Vancouver, BC.
+                👋 Hello! I&apos;m a software engineer based in Japan.
               </p>
               <p className="text-gray-lite dark:text-color-910 leading-5 text-[16px] pb-2">
-                📚 I majored in web development at a college in Canada,
-                specializing in modern application development using
-                technologies such as React.js and Node.js. My experience as a
-                systems engineer, handling everything from requirements
-                definition to development, has laid the foundation for
-                user-centric development.
+                📚 I studied Web and Mobile App Development at a college in
+                Vancouver, Canada, building modern applications with React.js
+                and Node.js. Today I work as a systems engineer in Japan,
+                developing Android (Jetpack Compose) and iOS (Swift) apps along
+                with backend systems in Python, PHP, and SQL. Handling
+                everything from requirements definition to development has laid
+                the foundation for user-centric development.
               </p>
               <p className="text-gray-lite dark:text-color-910 leading-5 text-[16px] pb-2">
                 🌎 In the world of technology, learning never ends! I actively
@@ -78,11 +79,11 @@ const index = () => {
             <>
               <p className="text-gray-lite  dark:text-color-910 leading-5.5 text-[15px] pb-1">
                 👋{" "}
-                こんにちは！私はバンクーバー（BC）を拠点に活動しているフルスタック開発者です。
+                こんにちは！私は日本を拠点に活動しているソフトウェアエンジニアです。
               </p>
               <p className="text-gray-lite  dark:text-color-910 leading-5.5 text-[15px] pb-1">
                 📚{" "}
-                カナダのカレッジでWeb開発を専攻し、特にReact.jsやNode.jsなどを活用したモダンなアプリケーション開発に強みを持ちます。SEとして要件定義から開発までを一貫して担当した経験はユーザー目線での開発に活かす基盤となっています。
+                カナダ・バンクーバーのカレッジでWeb・モバイルアプリ開発を専攻し、React.jsやNode.jsを使ったモダンなアプリケーション開発を学びました。現在は日本でSEとして、Jetpack Composeを使ったAndroidアプリやSwiftでのiOSアプリ、Python・PHP・SQLでのバックエンド開発に携わっています。要件定義から開発までを一貫して担当してきた経験は、ユーザー目線での開発に活かす基盤となっています。
               </p>
               <p className="text-gray-lite  dark:text-color-910 leading-5.5 text-[15px] pb-1">
                 🌎{" "}
@@ -103,4 +104,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default About;

@@ -9,7 +9,7 @@ import {
   SiJavascript,
 } from "react-icons/si";
 
-module.exports = [
+const frontend = [
   {
     id: "1",
     icon: <FaReact size={29} />,
@@ -72,3 +72,5 @@ module.exports = [
     title: "Figma",
   },
 ];
+
+export default frontend;

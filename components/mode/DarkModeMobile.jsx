@@ -2,7 +2,7 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { useTheme } from "next-themes";
 
 export default function DarkModeMobile() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
 
   // toggle of dark & light mode
   const toggle = () => {

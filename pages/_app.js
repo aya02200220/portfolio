@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,6 +15,9 @@ export default function App({ Component, pageProps }) {
   }, []);
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -30,7 +34,6 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </ThemeProvider>
       </LanguageProvider>
-      ,
     </>
   );
 }

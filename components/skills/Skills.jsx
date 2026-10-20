@@ -1,72 +1,47 @@
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import frontend from "../../data/frontend";
 import backend from "../../data/backend";
+import mobile from "../../data/mobile";
+
+const groups = [
+  { title: "Frontend", items: frontend },
+  { title: "Backend", items: backend },
+  { title: "Mobile", items: mobile },
+];
 
 const Service = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme } = useTheme();
 
   return (
-    <div className="flex gap-4 items-stretch">
-      {/* <div data-aos="flip-left" data-aos-duration="1000"></div> */}
-      <div
-        data-aos="flip-left"
-        data-aos-duration="1000"
-        className="flex-1 pt-5 rounded-md "
-        style={{
-          background: `${theme === "dark" ? "#808080" : "#F1EBEC"}`,
-          border: `${theme === "dark" ? "solid 1px #6F676C" : "transparent"}`,
-        }}
-      >
-        <p className="text-center text-2xl font-medium ">Frontend</p>
-        <p className="after-line mt-0 lg:mt-0"></p>
-        <div className="dark:bg-transparent flex flex-wrap justify-center py-4">
-          {frontend.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center space-x-2 ml-3 w-[152px] md:w-[160px] h-[50px]"
-            >
-              <div className="flex justify-center items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-stretch">
+      {groups.map((group) => (
+        <div
+          key={group.title}
+          data-aos="flip-left"
+          data-aos-duration="1000"
+          className="pt-5 rounded-md"
+          style={{
+            background: `${theme === "dark" ? "#808080" : "#F1EBEC"}`,
+            border: `${theme === "dark" ? "solid 1px #6F676C" : "transparent"}`,
+          }}
+        >
+          <p className="text-center text-2xl font-medium">{group.title}</p>
+          <p className="after-line mt-0 lg:mt-0"></p>
+          <div className="dark:bg-transparent flex flex-wrap justify-center py-4">
+            {group.items.map((item) => (
+              <div
+                key={item.id}
+                className="flex items-center space-x-2 ml-3 w-[170px] h-[50px]"
+              >
                 {item?.icon}
-                <div className="space-y-2 ">
-                  <h3 className="dark:text-white text-lg md:text-xl ml:1 md:ml-2">
-                    {item?.title}
-                  </h3>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div
-        data-aos="flip-left"
-        data-aos-duration="1000"
-        className="flex-1 pt-5 rounded-md "
-        style={{
-          background: `${theme === "dark" ? "#808080" : "#F1EBEC"}`,
-          border: `${theme === "dark" ? "solid 1px #6F676C" : "transparent"}`,
-        }}
-      >
-        <p className="text-center text-2xl font-medium">Backend</p>
-        <p className="after-line mt-0 lg:mt-0"></p>
-
-        <div className="dark:bg-transparent flex flex-wrap justify-center py-4">
-          {backend.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center space-x-2 ml-3 w-[152px] md:w-[160px] h-[50px]"
-            >
-              {item?.icon}
-              <div className="space-y-2 ">
-                <h3 className="dark:text-white text-lg md:text-xl ml:1 md:ml-2">
+                <h3 className="dark:text-white text-lg md:text-xl leading-tight ml-1 md:ml-2">
                   {item?.title}
                 </h3>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };

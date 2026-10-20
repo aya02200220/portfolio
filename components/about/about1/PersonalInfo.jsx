@@ -13,7 +13,7 @@ const PersonalInfo = () => {
       icon: <FaMapMarkerAlt />,
       iconColor: "text-oriange-lite",
       name: "Location",
-      meta: <>Vancouver B.C, Canada</>,
+      meta: <>Japan</>,
     },
   ];
 

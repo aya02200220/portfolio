@@ -3,7 +3,7 @@ import Image from "next/image";
 import snsData from "../../data/snsData";
 
 const SnsInfo = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
 
   return (
     <>
@@ -14,13 +14,8 @@ const SnsInfo = () => {
         className="flex flex-wrap p-[30px]  border-[#A6A6A6]  gap-5 md:gap-1 lg:gap-5 rounded-xl justify-center"
       >
         {snsData.map((item) => (
-          <div data-aos="flip-left" data-aos-duration="2000">
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={item.id}
-            >
+          <div key={item.id} data-aos="flip-left" data-aos-duration="2000">
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
               <span className={`socialbtn ${item.iconClass}`}>{item.icon}</span>
             </a>
           </div>
