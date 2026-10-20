@@ -5,7 +5,7 @@ import addressData from "../../data/addressData";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 const Address = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
 
   return (
     <>

@@ -13,15 +13,13 @@ module.exports = withMT({
       // you can configure the container to be centered
       center: true,
 
-      // default breakpoints but with 40px removed
+      // full width below lg
       screens: {
         // xs: "400px",
         // sm: "600px",
         // md: "800px",
         // lg: "960px",
         // xl: "1280px",
-        sm: "100%",
-        md: "100%",
         lg: "992px",
         xl: "1100px",
       },

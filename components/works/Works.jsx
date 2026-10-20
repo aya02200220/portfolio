@@ -13,7 +13,7 @@ import Masonry from "react-masonry-css";
 import Modal from "react-modal";
 // import portfolioData from "../../data/worksData";
 import portfolioData from "../../data/workDetail";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTheme } from "next-themes";
 
 import { useLanguage } from "../context/LanguageContext";
@@ -29,15 +29,10 @@ const Works = () => {
   // start dynamic portfolio with slug
   const [singleData, setSingleData] = useState({});
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
 
   const { language } = useLanguage();
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    setData(portfolioData[language] || []);
-  }, [language]);
+  const allWorks = portfolioData[language] || [];
 
   // const handlePortfolioData = (id) => {
   //   const find = portfolioData.find((item) => item?.id === id);
@@ -46,10 +41,7 @@ const Works = () => {
   // };
 
   const handlePortfolioData = (id) => {
-    const data = Array.isArray(portfolioData)
-      ? portfolioData
-      : portfolioData[language] || [];
-    const find = data.find((item) => item?.id === id);
+    const find = allWorks.find((item) => item?.id === id);
     setSingleData(find);
     setIsOpen(true);
   };
@@ -62,13 +54,8 @@ const Works = () => {
   const [category, setCategory] = useState("All");
 
   const handleSearch = (text) => {
-    handleData(text);
     setCategory(text);
   };
-  useEffect(() => {
-    setCategory("All");
-    handleData("All");
-  }, []);
 
   // filter
   // const handleData = (text) => {
@@ -80,17 +67,10 @@ const Works = () => {
   //   }
   // };
 
-  const handleData = (text) => {
-    const currentData = portfolioData[language] || [];
-    if (text === "All") {
-      setData(Array.isArray(currentData) ? currentData : []);
-    } else {
-      const findData = Array.isArray(currentData)
-        ? currentData.filter((item) => item.tag === text)
-        : [];
-      setData(findData);
-    }
-  };
+  const data =
+    category === "All"
+      ? allWorks
+      : allWorks.filter((item) => item.tag === category);
 
   return (
     <>
@@ -127,6 +107,14 @@ const Works = () => {
           onClick={() => handleSearch("E-commerce")}
         >
           E-commerce
+        </li>
+        <li
+          className={`${
+            category === "iOS app" ? "text-[#d54b87]" : "filter-btn"
+          } mr-4 md:mx-4`}
+          onClick={() => handleSearch("iOS app")}
+        >
+          iOS app
         </li>
       </ul>
       {/* End portfolio filter tab */}
@@ -220,6 +208,7 @@ const Works = () => {
                   </div>
 
                   <div className="space-y-2">
+                    {singleData?.gitlink && (
                     <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px]  sm:text-lg ">
                       <IoLogoGithub className="text-lg mr-2 hidden sm:block" />
                       {/* Preview :&nbsp; */}
@@ -233,6 +222,7 @@ const Works = () => {
                         </a>
                       </span>
                     </p>
+                    )}
                     <p className="dark:text-white flex items-center text-[15px] sm:text-lg ">
                       <FiExternalLink className="text-lg mr-2 hidden sm:block" />
                       Website :&nbsp;

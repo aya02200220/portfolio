@@ -15,7 +15,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
 
   const handleLinkClick = (e, targetID) => {
     e.preventDefault();

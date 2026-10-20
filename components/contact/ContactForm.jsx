@@ -14,7 +14,7 @@ const CommonContact = ({ condition }) => {
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
   const { language } = useLanguage();
 
   const form = useRef();
@@ -72,7 +72,7 @@ const CommonContact = ({ condition }) => {
             <br />
             <br />
             <span className="text-gray-lite dark:text-[#A6A6A6] ">
-              I'm eager to explore the realm of web development further! Let's
+              I&apos;m eager to explore the realm of web development further! Let&apos;s
               connect if you want to chat about tech, grab a coffee, or simply
               say hello.
             </span>

@@ -10,7 +10,7 @@ export default function Document() {
         />
 
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
 
@@ -21,7 +21,6 @@ export default function Document() {
           content=" cv, portfolio, react nextjs portfolio, resume"
         />
         <meta name="ibthemes" content="ATFN" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <body>

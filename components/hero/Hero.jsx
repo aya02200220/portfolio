@@ -1,206 +1,182 @@
-import Image from "next/image";
-import Link from "next/link";
-
-import Social from "../social/Social";
-import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import lightHeaderImg from "../../public/images/about/avatar3.png";
-import darkHeaderImg from "../../public/images/about/avatar2.png";
-
-import { ArrowRightCircle } from "react-bootstrap-icons";
-import "animate.css";
-import TrackVisibility from "react-on-screen";
-import { Button, TypographyProps } from "@material-tailwind/react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import Social from "../social/Social";
+import SkillSphere from "./SkillSphere";
 import { smoothScroll } from "../Scroll";
-
 import { useLanguage } from "../context/LanguageContext";
+import styles from "./Hero.module.css";
+
+const COPY = {
+  en: {
+    eyebrow: "Software Engineer · Japan",
+    hello: ["Hi, I'm Aya."],
+    lead: "I build",
+    words: ["iPhone apps.", "Android apps.", "web apps.", "backend systems."],
+    body: "I design and build apps for iPhone, Android and the web, from the first idea all the way to the App Store.",
+    works: "View works",
+    cv: "Download CV",
+  },
+  ja: {
+    eyebrow: "Software Engineer · Japan",
+    hello: ["こんにちは、", "Aya です。"],
+    lead: "つくっているのは、",
+    words: ["iPhone アプリ。", "Android アプリ。", "Web アプリ。", "バックエンド。"],
+    body: "日本で働くソフトウェアエンジニアです。iPhone・Android・Web のアプリを、アイデアから App Store に届けるまで、ひとつずつ手でつくっています。",
+    works: "作品を見る",
+    cv: "CV をダウンロード",
+  },
+};
+
+const STEPS = [
+  ["01", "Mobile", "Swift · Compose"],
+  ["02", "Web", "React · Next.js"],
+  ["03", "Backend", "Laravel · Python"],
+  ["04", "Ship", "App Store"],
+];
+
+const STATS = [
+  ["Location", "Japan"],
+  ["Role", "Software Eng."],
+  ["Live apps", 1],
+  ["In progress", 2],
+];
+
+const CountUp = ({ to }) => {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    let frame;
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min((now - start) / 1200, 1);
+      setN(Math.round(to * (1 - Math.pow(1 - t, 3))));
+      if (t < 1) frame = requestAnimationFrame(step);
+    };
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, [to]);
+  return n;
+};
 
 export const Hero = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [scrolled, setScrolled] = useState(false);
-
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState("");
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [index, setIndex] = useState(1);
-  const toRotate = ["A Full-Stack Developer.", "Based in Vancouver."];
-  const period = 1000;
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { language } = useLanguage();
+  // Across this site, the "ja" state shows English text and "en" shows Japanese.
+  const copy = language === "ja" ? COPY.en : COPY.ja;
+  const dark = resolvedTheme === "dark";
 
-  const handleLinkClick = (e, targetID) => {
-    e.preventDefault();
-    smoothScroll(targetID.substring(1)); // "#"を取り除くためにsubstringを使用
-  };
+  const [wordIndex, setWordIndex] = useState(0);
+  const [step, setStep] = useState(0);
+  const heroRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    const words = setInterval(
+      () => setWordIndex((i) => (i + 1) % copy.words.length),
+      2200
+    );
+    const steps = setInterval(() => setStep((i) => (i + 1) % STEPS.length), 1600);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      clearInterval(words);
+      clearInterval(steps);
     };
+  }, [copy.words.length]);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    const onMove = (e) => {
+      const rect = el.getBoundingClientRect();
+      el.style.setProperty("--gx", `${((e.clientX - rect.left) / rect.width) * 100}%`);
+      el.style.setProperty("--gy", `${((e.clientY - rect.top) / rect.height) * 100}%`);
+    };
+    el.addEventListener("pointermove", onMove);
+    return () => el.removeEventListener("pointermove", onMove);
   }, []);
 
-  const fullPageStyle = {
-    height: "100vh",
-    overflowY: "hidden",
-    paddingBottom: "50px",
-  };
-
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
-
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-
-    setText(updatedText);
-
-    if (isDeleting) {
-      setDelta((prevDelta) => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setIndex((prevIndex) => prevIndex - 1);
-      setDelta(period);
-    } else if (isDeleting && updatedText === "") {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setIndex(1);
-      setDelta(100);
-    } else {
-      setIndex((prevIndex) => prevIndex + 1);
-    }
+  const goTo = (e, id) => {
+    e.preventDefault();
+    smoothScroll(id);
   };
 
   return (
-    <section className="banner z-0" id="home">
-      <Container
-        style={fullPageStyle}
-        className=" pt-[100px] lg:pt-[150px] pl-10 "
-      >
-        <Row className="flex align-items-center lg:pt-9 lg:h-full ">
-          <div className="flex-1 w-3/5 relative ">
-            {" "}
-            <div>
-              <TrackVisibility>
-                {({ isVisible }) => (
-                  <div
-                    className={
-                      isVisible ? "animate__animated animate__fadeIn" : ""
-                    }
-                  >
-                    <span
-                      className={`text-tiny md:text-lg lg:text-xl tagline ${
-                        theme === "dark" ? "text-[#FEFAFE]" : "text-[#2B2B2B]"
-                      } `}
-                    >
-                      Welcome to my Portfolio
-                    </span>
+    <section
+      ref={heroRef}
+      className={`${styles.hero} ${copy === COPY.ja ? styles.ja : ""}`}
+      id="home"
+    >
+      <div className={styles.glow} aria-hidden="true" />
+      <div className={styles.grid} aria-hidden="true" />
 
-                    {/* {language === "ja" ? ():()} */}
-                    <h1
-                      className={`text-6xl md:text-8xl lg:text-9xl md:h-[140px] lg:h-[195px] ${
-                        theme === "dark" ? "text-[#fbf7fb]" : "text-[#2B2B2B]"
-                      }`}
-                    >
-                      {`Hi! I'm Aya`}
-                      <br />
+      <div className={styles.sphere}>
+        <SkillSphere dark={dark} />
+      </div>
 
-                      <span
-                        className="txt-rotate"
-                        // dataPeriod="1000"
-                        data-rotate='[ "A Full-Stack Developer", "Based in Vancouver, BC." ]'
-                      >
-                        <span className="wrap">{text}</span>
-                      </span>
-                    </h1>
+      <div className={`${styles.hud} ${styles.hudSteps}`} aria-hidden="true">
+        <p className={styles.hudFile}>
+          <i />
+          aya.dev
+        </p>
+        <ol>
+          {STEPS.map(([no, name, detail], i) => (
+            <li key={no} className={i === step ? styles.on : ""}>
+              <b>{no}</b>
+              <span>{name}</span>
+              <small>{detail}</small>
+            </li>
+          ))}
+        </ol>
+      </div>
 
-                    {language === "ja" ? (
-                      <p
-                        className={
-                          theme === "dark"
-                            ? "text-[#777777] text-[18px]"
-                            : "text-[#676262] text-[18px]"
-                        }
-                      >
-                        Feel free to reach out if you want to discuss
-                        technology, collaboration, or just a chat over coffee.
-                        My inbox is always open!
-                      </p>
-                    ) : (
-                      <p
-                        className={
-                          theme === "dark"
-                            ? "text-[#777777] text-[17px]"
-                            : "text-[#676262] text-[17px]"
-                        }
-                      >
-                        技術について話し合いたい、コラボレーションについて相談したい、あるいはただコーヒーを飲みながらおしゃべりしたい場合は、いつでもご連絡ください。
-                        私のメールボックスは常に開いています！
-                      </p>
-                    )}
-
-                    {/* Connect */}
-                    <div className="flex flex-col md:flex-row items-center mt-4 gap-8">
-                      <Link href="#contact">
-                        <Button
-                          onClick={(e) => handleLinkClick(e, "#contact")}
-                          className="flex items-center bg-gradient-to-r from-[rgba(250,82,82,0.5)] to-[rgba(221,36,118,0.5)] duration-500 transition ease-linear hover:bg-gradient-to-l from-[rgba(221,36,118,0.5)] to-[rgba(250,82,82,0.5)] px-8 py-3 text-white rounded-[35px] text-tiny md:text-lg lg:text-xl"
-                        >
-                          Let’s Connect <ArrowRightCircle size={25} />
-                        </Button>
-                      </Link>
-                      <div className="flex space-x-3">
-                        <Social />
-                      </div>
-                      {/* End Connect */}
-                    </div>
-                  </div>
-                )}
-              </TrackVisibility>
+      <div className={`${styles.hud} ${styles.hudStats}`} aria-hidden="true">
+        <p className={styles.hudTitle}>Status</p>
+        <dl>
+          {STATS.map(([label, value]) => (
+            <div key={label}>
+              <dt>{label}</dt>
+              <dd>{typeof value === "number" ? <CountUp to={value} /> : value}</dd>
             </div>
+          ))}
+        </dl>
+      </div>
+
+      <div className={styles.copy}>
+        <p className={styles.eyebrow}>
+          <i />
+          {copy.eyebrow}
+        </p>
+        <h1 className={styles.title}>
+          <span className={styles.line}>
+            {copy.hello.map((part) => (
+              <span key={part} className={styles.nb}>
+                {part}
+              </span>
+            ))}
+          </span>
+          <span className={styles.line}>{copy.lead}</span>
+          <span className={styles.rotator}>
+            <span key={`${language}-${wordIndex}`} className={styles.word}>
+              {copy.words[wordIndex]}
+            </span>
+          </span>
+        </h1>
+        <p className={styles.body}>{copy.body}</p>
+
+        <div className={styles.actions}>
+          <a href="#works" onClick={(e) => goTo(e, "works")} className={styles.primary}>
+            {copy.works}
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="/images/AyaIshimura-CV.pdf" target="_blank" rel="noopener noreferrer" className={styles.secondary}>
+            {copy.cv}
+          </a>
+          <div className={styles.social}>
+            <Social />
           </div>
-          <div className=" w-2/5">
-            {" "}
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__zoomIn" : ""
-                  }
-                >
-                  <Image
-                    className="img mr-0"
-                    src={theme === "dark" ? darkHeaderImg : lightHeaderImg}
-                    alt="Header Img"
-                  />
-                </div>
-              )}
-            </TrackVisibility>
-          </div>
-        </Row>
-      </Container>
+        </div>
+      </div>
+
+      <a href="#about" onClick={(e) => goTo(e, "about")} className={styles.cue}>
+        <i />
+        Scroll
+      </a>
     </section>
   );
 };

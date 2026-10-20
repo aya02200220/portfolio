@@ -1,4 +1,4 @@
-module.exports = [
+const addressData = [
   {
     id: "02",
     icon: "/images/contact/email 1.png",
@@ -24,10 +24,12 @@ module.exports = [
     info: (
       <>
         <p className="text-gray-lite text-lg dark:text-[#A6A6A6] ">
-          Vancouver, B.C, Canada
+          Japan
         </p>
       </>
     ),
     bg: "#D4C5C8",
   },
 ];
+
+export default addressData;

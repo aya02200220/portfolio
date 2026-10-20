@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aya Ishimura - CV</title>
+<!--
+  Source for public/images/AyaIshimura-CV.pdf.
+  Rebuild the PDF with: npm run cv
+-->
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink-bg: #fbecec;
+    --accent: #b8545d;
+    --dot: #f2a7b0;
+    --rule: #ddd3cb;
+    --bar: #8e8e8e;
+    --text: #3a3a3a;
+    --muted: #555;
+  }
+
+  html, body { width: 8.5in; height: 11in; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.24;
+    color: var(--text);
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: inherit; }
+  b { color: #444; }
+
+  /* Header */
+  header {
+    background: var(--pink-bg);
+    border-bottom: 7px solid var(--bar);
+    padding: 18px 34px 13px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name {
+    font-family: "Myanmar MN", "Helvetica Neue", sans-serif;
+    font-weight: 700;
+    font-size: 27pt;
+    letter-spacing: 3px;
+    color: #4a4a4a;
+    line-height: 1;
+    padding-bottom: 3px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-right: 96px;
+  }
+  .role {
+    font-family: "Myanmar MN", "Helvetica Neue", sans-serif;
+    font-size: 11.5pt;
+    letter-spacing: 1.6px;
+    color: #4a4a4a;
+    margin-top: 9px;
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 26px;
+    row-gap: 6px;
+    font-size: 9.8pt;
+    color: var(--muted);
+  }
+  .contact a { text-decoration: none; }
+  .contact span { display: flex; align-items: center; gap: 7px; }
+  .contact svg { width: 17px; height: 17px; fill: #5d5d5d; flex: none; }
+
+  main { padding: 10px 32px 0 32px; }
+
+  h2 {
+    font-family: "Myanmar MN", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 14pt;
+    letter-spacing: 0.5px;
+    color: #4a4a4a;
+    border-bottom: 2px solid var(--rule);
+    padding: 0 0 1px 10px;
+    margin: 0 0 6px 0;
+  }
+  section { margin-bottom: 10px; }
+
+  .summary { padding: 0 2px; }
+
+  /* Projects */
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 22px;
+    row-gap: 10px;
+    padding: 2px 10px 0 10px;
+  }
+  .project h3 { font-size: 9.6pt; font-weight: 700; }
+  .project h3 .title { text-decoration: underline; color: #444; }
+  .project h3 .links { font-weight: 400; margin-left: 10px; }
+  .project h3 .links b { margin-right: 3px; }
+  .project p { margin-top: 1px; }
+  .project .spec { margin-top: 4px; }
+
+  /* Employment timeline */
+  .job {
+    display: grid;
+    grid-template-columns: 172px 1fr;
+    padding-left: 10px;
+    position: relative;
+  }
+  .job + .job { padding-top: 10px; }
+  .job .when { padding-right: 18px; }
+  .job .when b { display: block; }
+  .job .what {
+    border-left: 1.5px solid var(--dot);
+    padding: 0 0 0 30px;
+    position: relative;
+  }
+  .job .what::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 2px;
+    width: 9px;
+    height: 9px;
+    border: 1.5px solid var(--dot);
+    border-radius: 50%;
+    background: #fff;
+  }
+  .job + .job .what { margin-top: -10px; padding-top: 10px; }
+  .job + .job .what::before { top: 12px; }
+  .job .company { color: #444; }
+  .job .stack { text-decoration: underline; color: var(--muted); }
+  .job ul { list-style: none; }
+  .job li { padding-left: 13px; text-indent: -13px; }
+  .job li::before { content: "-"; display: inline-block; width: 13px; text-indent: 0; }
+
+  /* Bottom two columns */
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1px 260px;
+    column-gap: 18px;
+    margin-top: 2px;
+  }
+  .divider { background: var(--rule); }
+  .bottom h2 { padding-left: 0; }
+  .skills p { margin-bottom: 4px; }
+  .edu p { margin-bottom: 4px; }
+  .edu .date { font-style: italic; text-decoration: underline; }
+  .edu h2.lang { margin-top: 8px; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="name">AYA ISHIMURA</div>
+      <div class="role">SOFTWARE ENGINEER</div>
+    </div>
+    <div class="contact">
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Japan
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.3 18H5.7V9.8h2.6V18zM7 8.7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18.3 18h-2.6v-4c0-1-.02-2.2-1.35-2.2-1.35 0-1.55 1.05-1.55 2.13V18h-2.6V9.8h2.5v1.12h.04c.35-.66 1.2-1.35 2.47-1.35 2.64 0 3.13 1.74 3.13 4V18z"/></svg>
+        <a href="https://www.linkedin.com/in/aya-ishimura-8724a6247/">Aya Ishimura</a>
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <a href="mailto:pyon220@gmail.com">pyon220@gmail.com</a>
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.22.66-.48v-1.7c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.57.67.48A10 10 0 0 0 12 2z"/></svg>
+        <a href="https://github.com/aya02200220">aya02200220</a>
+      </span>
+      <span></span>
+      <span>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="9.5" r="3.3" fill="#fbecec"/><path d="M5.8 18.2c1.3-2.3 3.5-3.6 6.2-3.6s4.9 1.3 6.2 3.6A8 8 0 0 1 12 20a8 8 0 0 1-6.2-1.8z" fill="#fbecec"/></svg>
+        <a href="https://portfolio-aya02200220s-projects.vercel.app/">Portfolio Website</a>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>SUMMARY</h2>
+      <p class="summary">
+        A software engineer with professional development experience across mobile, web, and business automation in Japan,
+        backed by a Web and Mobile App Development Diploma from a Canadian college. I currently build Android (Jetpack Compose)
+        and iOS (Swift) applications along with backend processing and system integrations in Python, PHP, and SQL. Earlier,
+        I led VBA automation projects that reduced manual work across a department. A native Japanese speaker with professional
+        English (TOEIC 905), gained through two years of study and work in Vancouver.
+      </p>
+    </section>
+
+    <section>
+      <h2>PROJECTS</h2>
+      <div class="projects">
+        <div class="project">
+          <h3><span class="title">NoirRose - Blogging Platform</span><span class="links"><b>(</b> <a href="https://noir-rose.vercel.app/">Preview</a> / <a href="https://github.com/aya02200220/blog-app">GitHub</a> )</span></h3>
+          <p>Crafted with MERN Stack, provides seamless blog reading and management. Features include user authentication and Cloudinary image hosting.</p>
+          <p class="spec"><b>Technical Specifications:</b> MongoDB, Express, React, Node.js, bcryptjs, jsonwebtoken, mongoose, multer, nodemailer, Cloudinary.</p>
+        </div>
+        <div class="project">
+          <h3><span class="title">Manga-Mart - E-commerce</span><span class="links"><b>(</b> <a href="https://manga-mart.vercel.app/">Preview</a> / <a href="https://github.com/aya02200220/Manga-mart-e-commerce">GitHub</a> )</span></h3>
+          <p>A Next.js-based e-commerce site with modern features like Google login, a favorites system, and a cart function, with a modernized UI/UX.</p>
+          <p class="spec"><b>Technical Specifications:</b> React, Next.js, Google Auth, Firebase, TypeScript, Tailwind.</p>
+        </div>
+        <div class="project">
+          <h3><span class="title">Jackie - Project Platform</span><span class="links"><b>(</b> <a href="https://jackie-ebon.vercel.app/">Preview</a> / <a href="https://github.com/Kanako-muff/Dribbble-clone">GitHub</a> )</span></h3>
+          <p>A platform for showcasing and discovering design projects. Enables user authentication, project management, and exploration.</p>
+          <p class="spec"><b>Technical Specifications:</b> Next.js, TypeScript, Cloudinary, Grafbase, NextAuth.js, Google Cloud, Tailwind CSS.</p>
+        </div>
+        <div class="project">
+          <h3><span class="title">Web-based Todo App</span><span class="links"><b>(</b> <a href="https://todo-app-pi-fawn-97.vercel.app/">Preview</a> / <a href="https://github.com/aya02200220/Todo-app">GitHub</a> )</span></h3>
+          <p>A task manager with a user-friendly design. Enables CRUD operations, state management via Redux Toolkit, and persistence in Local Storage.</p>
+          <p class="spec"><b>Technical Specifications:</b> React, Redux Toolkit, Local Storage.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>EMPLOYMENT</h2>
+      <div class="job">
+        <div class="when">Nov 2025 - Present<b>Systems Engineer</b></div>
+        <div class="what">
+          <div class="company">GROOVER CORPORATION</div>
+          <div class="stack">Tech Stack: Jetpack Compose, Swift, CocoaPods, Python, PHP (Laravel), SQL</div>
+          <ul>
+            <li>Develop Android applications with Jetpack Compose and iOS applications with Swift and CocoaPods.</li>
+            <li>Implement backend processing in Python and PHP (Laravel) with SQL databases.</li>
+            <li>Build data exchange with external systems over FTP and fixed-format messages.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Dec 2022 - Aug 2024<b>Barista &amp;<br>Customer Liaison</b></div>
+        <div class="what">
+          <div class="company">True Confections, Vancouver, BC</div>
+          <ul>
+            <li>High-Volume Handling: Maintained composure and efficiency in fast-paced settings.</li>
+            <li>Effective Communication: Served customers in English with clear, friendly correspondence.</li>
+            <li>Task Prioritization: Balanced multiple responsibilities while studying full-time.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Sep 2020 - Apr 2022<b>Automation Developer</b></div>
+        <div class="what">
+          <div class="company">SINANEN HOLDINGS CO., LTD.</div>
+          <div class="stack">Tech Stack: VBA, Excel, Macro</div>
+          <ul>
+            <li>Led automation of departmental tasks using VBA, enhancing accuracy and efficiency.</li>
+            <li>Owned projects from requirements definition through development.</li>
+            <li>Developed tailored, high-precision automation solutions to reduce manual effort.</li>
+            <li>Improved operational efficiency by refining existing Excel workflows.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom">
+      <section class="skills">
+        <h2>SKILLS</h2>
+        <p><b>Programming:</b> JavaScript / TypeScript / Swift / Java / Python / PHP / SQL / HTML5 / CSS3</p>
+        <p><b>Mobile:</b> Android / iOS / CocoaPods</p>
+        <p><b>Libraries and Frameworks:</b> React (Redux, React Router) / Next.js / Node.js (Express.js) / Laravel / Jetpack Compose / GraphQL / Bootstrap / Material-UI / Tailwind</p>
+        <p><b>Databases:</b> MySQL / MongoDB (Mongoose)</p>
+        <p><b>Other:</b> Git / Figma / FTP / Fixed-format messaging</p>
+      </section>
+      <div class="divider"></div>
+      <section class="edu">
+        <h2>EDUCATION</h2>
+        <p><span class="date">Aug 2024</span> &middot; Vancouver, BC</p>
+        <p><b>Web And Mobile App Development Diploma</b><br>Cornerstone International<br>Community College of Canada</p>
+        <h2 class="lang">LANGUAGES</h2>
+        <p><b>Japanese:</b> Native</p>
+        <p><b>English:</b> Professional (TOEIC 905)</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

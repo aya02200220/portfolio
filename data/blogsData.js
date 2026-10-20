@@ -1,4 +1,4 @@
-module.exports = {
+const blogsData = {
   ja: [
     {
       id: "5",
@@ -117,3 +117,5 @@ module.exports = {
     },
   ],
 };
+
+export default blogsData;

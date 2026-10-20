@@ -2,7 +2,7 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaDev } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
 
-module.exports = [
+const snsData = [
   {
     id: 1,
     link: "https://www.linkedin.com/in/aya-ishimura-8724a6247/",
@@ -28,3 +28,5 @@ module.exports = [
     iconClass: "text-[#1773EA]",
   },
 ];
+
+export default snsData;

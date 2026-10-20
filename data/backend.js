@@ -1,8 +1,9 @@
-import { FaNodeJs } from "react-icons/fa";
+import { FaNodeJs, FaJava, FaPython, FaPhp } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
-import { SiExpress, SiJavascript, SiMongodb, SiGraphql } from "react-icons/si";
+import { MdOutlineSyncAlt } from "react-icons/md";
+import { SiExpress, SiLaravel, SiMongodb, SiGraphql } from "react-icons/si";
 
-module.exports = [
+const backend = [
   {
     id: "1",
     icon: <FaNodeJs size={29} />,
@@ -15,18 +16,23 @@ module.exports = [
   },
   {
     id: "3",
-    icon: <SiJavascript size={29} />,
-    title: "JavaScript",
+    icon: <FaPython size={29} />,
+    title: "Python",
   },
   {
     id: "4",
-    icon: <SiJavascript size={29} />,
-    title: "Java",
+    icon: <FaPhp size={29} />,
+    title: "PHP",
+  },
+  {
+    id: "10",
+    icon: <SiLaravel size={29} />,
+    title: "Laravel",
   },
   {
     id: "5",
-    icon: <SiMongodb size={29} />,
-    title: "MongoDB",
+    icon: <FaJava size={29} />,
+    title: "Java",
   },
   {
     id: "6",
@@ -35,7 +41,19 @@ module.exports = [
   },
   {
     id: "7",
+    icon: <SiMongodb size={29} />,
+    title: "MongoDB",
+  },
+  {
+    id: "8",
     icon: <SiGraphql size={29} />,
-    title: "Graphql",
+    title: "GraphQL",
+  },
+  {
+    id: "9",
+    icon: <MdOutlineSyncAlt size={29} />,
+    title: "FTP",
   },
 ];
+
+export default backend;
