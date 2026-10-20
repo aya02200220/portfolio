@@ -1,34 +1,16 @@
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import "../styles/globals.css";
 import "../styles/custom.css";
-import { ToastContainer } from "react-toastify";
+import "../styles/tokens.css";
 import { LanguageProvider } from "../components/context/LanguageContext";
 
 export default function App({ Component, pageProps }) {
-  useEffect(() => {
-    AOS.init({ duration: 1200 });
-    AOS.refresh();
-  }, []);
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <ToastContainer
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
       <LanguageProvider>
         <ThemeProvider attribute="class">
           <Component {...pageProps} />

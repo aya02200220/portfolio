@@ -1,12 +1,18 @@
+import { smoothScroll } from "../Scroll";
+import styles from "./Footer.module.css";
+
 const Footer = () => {
+  const toTop = (e) => {
+    e.preventDefault();
+    smoothScroll("home");
+  };
+
   return (
-    <footer className="overflow-hidden rounded-b-2xl bg-slate-50 dark:bg-[#333]">
-      <div className="container">
-        <p className="text-center py-6 text-gray-lite  dark:text-color-910 ">
-          &copy; {new Date().getFullYear()} All Rights Reserved by{" "}
-          <a>Aya Ishimura</a>.
-        </p>
-      </div>
+    <footer className={styles.footer}>
+      <p>&copy; {new Date().getFullYear()} Aya Ishimura</p>
+      <a href="#home" onClick={toTop}>
+        Back to top <span aria-hidden="true">↑</span>
+      </a>
     </footer>
   );
 };
