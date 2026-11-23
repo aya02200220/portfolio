@@ -1,4 +1,7 @@
 .hero {
+  /* On wide screens, keep the content inside a centered 1440px frame */
+  --frame: max(0px, calc((100vw - 1440px) / 2));
+  --edge: calc(var(--frame) + var(--gutter));
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
@@ -9,7 +12,7 @@
   font-family: "Montserrat", system-ui, sans-serif;
   display: grid;
   align-items: end;
-  padding: 190px var(--gutter) clamp(56px, 9vh, 96px);
+  padding: 190px var(--edge) clamp(56px, 9vh, 96px);
 }
 
 /* Fade into the page below */
@@ -48,7 +51,7 @@
 .sphere {
   position: absolute;
   top: 50%;
-  right: clamp(-40px, 2vw, 60px);
+  right: calc(var(--frame) + clamp(-40px, 2vw, 60px));
   width: min(52vw, 640px, 82vh);
   aspect-ratio: 1;
   transform: translateY(-48%);
@@ -75,7 +78,7 @@
 
 .hudSteps {
   top: 92px;
-  left: var(--gutter);
+  left: var(--edge);
   display: flex;
   align-items: center;
   gap: 18px;
@@ -84,7 +87,7 @@
 
 .hudStats {
   top: 92px;
-  right: var(--gutter);
+  right: var(--edge);
   width: 200px;
 }
 
@@ -337,7 +340,7 @@
 
 .cue {
   position: absolute;
-  right: clamp(20px, 5vw, 72px);
+  right: calc(var(--frame) + clamp(20px, 5vw, 72px));
   bottom: 34px;
   z-index: 2;
   display: flex;
