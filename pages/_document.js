@@ -21,6 +21,23 @@ export default function Document() {
           content=" cv, portfolio, react nextjs portfolio, resume"
         />
         <meta name="ibthemes" content="ATFN" />
+
+        {/* Link previews (LinkedIn, X, Slack and other sites) */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Aya Ishimura Portfolio" />
+        <meta property="og:title" content="Aya Ishimura | Software Engineer & Indie iOS Developer" />
+        <meta
+          property="og:description"
+          content="Software engineer building web, Android and iOS apps. Founder of Mochido Studio."
+        />
+        <meta property="og:url" content="https://portfolio-aya02200220s-projects.vercel.app/" />
+        <meta
+          property="og:image"
+          content="https://portfolio-aya02200220s-projects.vercel.app/og-image.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <body>
