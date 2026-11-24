@@ -42,7 +42,7 @@ const Header = () => {
     <div>
       <div className="px-5 fixed z-10">
         <header
-          className={`flex justify-between items-center fixed top-0 left-0 right-0 transition-all duration-500 ${
+          className={`flex justify-between items-center fixed top-0 left-0 right-0 px-[max(0px,calc((100vw_-_1440px)/2))] transition-all duration-500 ${
             scrolled
               ? theme === "dark"
                 ? "bg-opacity-70 bg-[#333]"
